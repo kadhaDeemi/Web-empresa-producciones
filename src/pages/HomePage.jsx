@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import heroVideo from '../assets/hero-video.mp4'; 
 import ProjectCard from '../components/ProjectCard';
+import ClientsCarousel from '../components/ClientsCarrousel';
 
 import imgProyecto1 from '../assets/proyectos1.jpg';
 import imgProyecto2 from '../assets/proyectos2.jpg';
@@ -87,34 +88,46 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/*section clientes*/}
+      <section className="bg-black py-20">
+         <div className="max-w-7xl mx-auto text-center">
+             <h2 className="text-3xl md:text-4xl font-semibold text-red-700 mb-12">
+                 Clientes que confían en nosotros
+             </h2>
+             <ClientsCarousel />
+         </div>
+      </section>
+
+
       {/* Sección de Servicios */}
-<section className="bg-gray-900 py-20 px-4 md:px-12">
+<section className="bg-black py-20 px-4 md:px-12">
   <div className="max-w-7xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
       Nuestros Servicios
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {/* Tarjeta 1: Producción Audiovisual */}
-      <div className="bg-black p-8 rounded-lg border border-gray-800">
+      <div className="bg-black p-8 rounded-lg border border-red-800">
         <h3 className="text-xl font-bold text-white mb-2">Producción Audiovisual</h3>
         <p className="text-gray-400">Videos que cuentan tu historia con impacto y calidad cinematográfica.</p>
       </div>
       {/* Tarjeta 2: Producción de Eventos */}
-      <div className="bg-black p-8 rounded-lg border border-gray-800">
+      <div className="bg-black p-8 rounded-lg border border-red-800">
         <h3 className="text-xl font-bold text-white mb-2">Producción de Eventos</h3>
         <p className="text-gray-400">Creamos y producimos eventos inolvidables que conectan con tu audiencia.</p>
       </div>
       {/* Tarjeta 3: Arriendo de Equipos */}
-      <div className="bg-black p-8 rounded-lg border border-gray-800">
+      <div className="bg-black p-8 rounded-lg border border-red-800">
         <h3 className="text-xl font-bold text-white mb-2">Arriendo de Equipos</h3>
         <p className="text-gray-400">Equipamiento pro de video, audio e iluminación para tus proyectos.</p>
       </div>
       {/* Tarjeta 4: Activaciones BTL */}
-      <div className="bg-black p-8 rounded-lg border border-gray-800">
+      <div className="bg-black p-8 rounded-lg border border-red-800">
         <h3 className="text-xl font-bold text-white mb-2">Activaciones BTL</h3>
         <p className="text-gray-400">Experiencias de marca creativas que generan resultados medibles.</p>
       </div>
     </div>
+
     
     {/* botones de servicios */}
     <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-6">

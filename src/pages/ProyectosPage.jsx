@@ -38,7 +38,7 @@ const ProyectosPage = () => {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Encabezado de la Página */}
-      <header className="pt-32 pb-20 text-center bg-gray-900">
+      <header className="pt-32 pb-20 text-center bg-black">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold">Nuestro Trabajo</h1>
           <p className="mt-4 text-lg text-gray-400">

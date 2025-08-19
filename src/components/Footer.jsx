@@ -1,18 +1,18 @@
 import React from 'react';
-import { FaInstagram, FaVimeoV, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     //año actual
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-8 px-4">
+    <footer className="bg-black text-gray-400 py-8 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
         
         {/* Lado Izquierdo: Copyright */}
         <div>
           <p>&copy; {currentYear} SDC Producciones. Todos los derechos reservados.</p>
-          <p className="text-sm">Diseñado y desarrollado con pasión.</p>
+          <p className="text-sm">Diseñado y desarrollado por <a href="https://www.linkedin.com/in/damian-valderrama-acuna/" target='_blank' className='text-red-800'>Damian Valderrama</a>.</p>
         </div>
 
         {/* Lado Derecho: Redes Sociales */}
@@ -27,12 +27,12 @@ const Footer = () => {
           </a>
 
           <a 
-            href="https://vimeo.com" 
+            href="https://www.facebook.com/profile.php?id=100063869025426" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="hover:text-white transition-colors duration-300"
           >
-            <FaVimeoV className="w-6 h-6" />
+            <FaFacebook className="w-6 h-6" />
           </a>
 
           <a 
