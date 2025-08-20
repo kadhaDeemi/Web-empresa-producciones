@@ -1,4 +1,3 @@
-// src/pages/NosotrosPage.jsx
 import React from 'react';
 
 import teamImage from '../assets/equipo-trabajando.jfif';

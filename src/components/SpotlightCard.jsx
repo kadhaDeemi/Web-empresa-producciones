@@ -40,7 +40,7 @@ const SpotlightCard = ({ children, className = '' }) => {
       onMouseLeave={handleMouseLeave}
       // --mouse-x y --mouse-y son variables que see actualiza con React
       style={{ '--mouse-x': mousePosition.x, '--mouse-y': mousePosition.y }}
-      className={`relative p-8 rounded-lg bg-black border-2 border-gray-700 hover:border-red-700 transition-colors duration-300 ease-in-out overflow-hidden group ${className}`}>
+      className={`relative p-8 rounded-lg bg-black border-2 border-gray-700 hover:border-red-700 transition-colors duration-300 ease-in-out overflow-hidden group hover:shadow-lg hover:shadow-red-500/20  ${className}`}>
       {/* foco d luz */}
       <div 
         className="absolute  inset-0 bg-radial-gradient from-red-600/30 to-transparent transition-opacity duration-500 opacity-0 group-hover:opacity-100"
