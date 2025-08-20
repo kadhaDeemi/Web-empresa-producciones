@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import heroVideo from '../assets/hero-video.mp4'; 
 import ProjectCard from '../components/ProjectCard';
 import ClientsCarousel from '../components/ClientsCarrousel';
+import SpotlightCard from '../components/SpotlightCard';
 
 import imgProyecto1 from '../assets/proyectos1.jpg';
 import imgProyecto2 from '../assets/proyectos2.jpg';
@@ -107,25 +108,25 @@ const HomePage = () => {
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {/* Tarjeta 1: Producción Audiovisual */}
-      <div className="bg-black p-8 rounded-lg border border-red-800">
+       <SpotlightCard>
         <h3 className="text-xl font-bold text-white mb-2">Producción Audiovisual</h3>
         <p className="text-gray-400">Videos que cuentan tu historia con impacto y calidad cinematográfica.</p>
-      </div>
+      </SpotlightCard>
       {/* Tarjeta 2: Producción de Eventos */}
-      <div className="bg-black p-8 rounded-lg border border-red-800">
+      <SpotlightCard>
         <h3 className="text-xl font-bold text-white mb-2">Producción de Eventos</h3>
         <p className="text-gray-400">Creamos y producimos eventos inolvidables que conectan con tu audiencia.</p>
-      </div>
+      </SpotlightCard>
       {/* Tarjeta 3: Arriendo de Equipos */}
-      <div className="bg-black p-8 rounded-lg border border-red-800">
+      <SpotlightCard>
         <h3 className="text-xl font-bold text-white mb-2">Arriendo de Equipos</h3>
         <p className="text-gray-400">Equipamiento pro de video, audio e iluminación para tus proyectos.</p>
-      </div>
+      </SpotlightCard>
       {/* Tarjeta 4: Activaciones BTL */}
-      <div className="bg-black p-8 rounded-lg border border-red-800">
+      <SpotlightCard>
         <h3 className="text-xl font-bold text-white mb-2">Activaciones BTL</h3>
         <p className="text-gray-400">Experiencias de marca creativas que generan resultados medibles.</p>
-      </div>
+      </SpotlightCard>
     </div>
 
     
