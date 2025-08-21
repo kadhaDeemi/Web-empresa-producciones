@@ -58,7 +58,7 @@ const ServiciosPage = () => {
               <div 
                 key={index} 
                 className={`
-                  bg-[rgba(79,_0,_0,_15%)] p-8 rounded-lg border-2 border-gray-800 
+                  bg-[rgba(79,_0,_0,_25%)] p-8 rounded-lg border-2 border-gray-800  
                   transition-all duration-300 hover:rotate-0 hover:scale-105 
                   hover:shadow-xl ${service.borderColor} ${service.shadowColor}
                   ${index > 1 ? '-rotate-1' : 'rotate-1'}

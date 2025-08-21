@@ -7,16 +7,22 @@ import miembro2 from '../assets/miembro2.png';
 // Datos del equipo
 const teamMembers = [
   {
-    name: 'Damián C.',
+    name: 'Marcela Boux',
     role: 'Director y Fundador',
     imageUrl: miembro1,
-    bio: 'Con más de 10 años de experiencia en la industria, Damián lidera cada proyecto con una visión creativa y una ejecución impecable.'
+    bio: 'Con más de 10 años de experiencia en la industria, Marcela lidera cada proyecto con una visión creativa y una ejecución impecable.'
   },
   {
     name: 'Nombre Apellido',
     role: 'Productor General',
     imageUrl: miembro2,
     bio: 'Experto en logística y planificación, se asegura de que cada detalle, desde el pre hasta el post, se maneje a la perfección.'
+  },
+  {
+    name: 'Personal 3',
+    role: "Soporte tecnico",
+    imageUrl: miembro2,
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
 ];
 
@@ -26,49 +32,75 @@ const NosotrosPage = () => {
       {/* Encabezado de la Página */}
       <header className="pt-32 pb-20 text-center bg-black">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold">Nuestra Esencia</h1>
-          <p className="mt-4 text-lg text-gray-400">
-            Somos más que una productora; somos un equipo de creativos, técnicos y estrategas apasionados por contar historias.
-          </p>
+          <h1 className="text-4xl md:text-6xl font-bold">Sobre nosotros</h1>
         </div>
       </header>
 
-      {/* Sección de Historia y Filosofía */}
+     {/* --- SECCIÓN DE HISTORIA Y FILOSOFÍA (VERSIÓN ACTUALIZADA) --- */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* Column img */}
-          <div>
-            <img src={teamImage} alt="Equipo de SDC Producciones trabajando" className="rounded-lg shadow-2xl" />
+          
+          {/* Columna de Imagen (Aquí está el nuevo efecto) */}
+          <div className="relative group cursor-pointer">
+            {/* El Marco Rojo (que se moverá) */}
+            <div 
+              className="absolute inset-0 border-2 border-red-700 rounded-lg 
+                         translate-x-4 translate-y-4 group-hover:-translate-x-0 
+                         group-hover:-translate-y-0 transition-transform duration-300 ease-in-out"
+              aria-hidden="true"
+            ></div>
+            
+            {/* La Imagen (que también se moverá) */}
+            <img 
+              src={teamImage} 
+              alt="Equipo de SDC Producciones trabajando" 
+              className="relative rounded-lg shadow-lg hover:shadow-red-800
+                         transition-transform duration-300 ease-in-out 
+                         group-hover:-translate-x-0 group-hover:-translate-y-0 hover:scale-101" 
+            />
           </div>
-          {/* Column txt */}
+
+          {/* Columna de Texto (no cambia) */}
           <div>
-            <h2 className="text-3xl font-bold mb-4">Nuestra Historia</h2>
-            <p className="text-gray-400 mb-4 text-lg">
-              SDC Producciones nació de la pasión por crear contenido audiovisual y experiencias que no solo se ven bien, sino que también generan una conexión real. Empezamos como un pequeño colectivo y hemos crecido hasta convertirnos en una productora integral, pero nuestra filosofía sigue siendo la misma: cada proyecto es una oportunidad para crear algo extraordinario.
-            </p>
-            <p className="text-gray-400 text-lg">
-              Creemos en la colaboración, la innovación técnica y, sobre todo, en el poder de una buena historia. Desde el concepto inicial hasta la entrega final, nos involucramos por completo para asegurar que tu visión cobre vida de la manera más impactante posible.
+            <h2 className="text-3xl md:text-4xl font-bold mb-8"><span className='text-red-700'>SDC</span> PRODUCCIONES</h2>
+            <h4 className='text-xl font-bold mb-4'>SURGE COMO UNA RESPUESTA CREATIVA A LA NECESIDAD DE TRANSFORMAR IDEAS EN EVENTOS MEMORABLES.</h4>
+            <p className="text-gray-300 mb-4 text-lg">
+              Nuestro objetivo es la innovación técnica y, sobre todo, en el poder de una buena historia. Desde el concepto inicial hasta la entrega final, nos involucramos por completo para asegurar que tu visión cobre vida de la manera más impactante posible.
             </p>
           </div>
         </div>
       </section>
       
       {/* section Presentacion del Equipo */}
-      <section className="bg-gray-900 py-20 px-4">
+      <section className="bg-black py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">Conoce al Equipo</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
+          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-black p-8 rounded-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
-                <img src={member.imageUrl} alt={`Foto de ${member.name}`} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-purple-500" />
+              <div key={index} className="bg-black p-8 border-2 border-red-700 rounded-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <img src={member.imageUrl} alt={`Foto de ${member.name}`} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-800" />
                 <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                <p className="text-purple-400 font-semibold mb-2">{member.role}</p>
-                <p className="text-gray-400">{member.bio}</p>
+                <p className="text-red-600 font-semibold mb-2">{member.role}</p>
+                <p className="text-gray-200">{member.bio}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+      <section className="py-20">
+    <div className="max-w-4xl mx-auto text-center px-4">
+        <h2 className="text-3xl font-bold text-white">¿Listo para empezar tu próximo proyecto?</h2>
+        <p className="text-gray-400 mt-4 mb-8 text-lg">
+            Hablemos de cómo podemos llevar tus ideas al siguiente nivel.
+        </p>
+        <a 
+            href="/contacto" 
+            className="inline-block bg-red-700 text-white font-bold py-4 px-12 rounded-lg hover:bg-red-800 transition-colors duration-300 text-lg"
+        >
+            Contáctanos
+        </a>
+    </div>
+</section>
     </div>
   );
 };
