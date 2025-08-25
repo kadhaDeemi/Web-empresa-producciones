@@ -4,6 +4,7 @@ import heroVideo from '../assets/hero-video.mp4';
 import ProjectCard from '../components/ProjectCard';
 import ClientsCarousel from '../components/ClientsCarrousel';
 import SpotlightCard from '../components/SpotlightCard';
+import TestimonialsWall from '../components/TestimonialsWall';
 
 import imgProyecto1 from '../assets/proyectos1.jpg';
 import imgProyecto2 from '../assets/proyectos2.jpg';
@@ -92,8 +93,8 @@ const HomePage = () => {
       {/*section clientes*/}
       <section className="bg-black py-20">
          <div className="max-w-7xl mx-auto text-center">
-             <h2 className="text-3xl md:text-4xl font-semibold text-red-700 mb-12">
-                 Clientes que confían en nosotros
+             <h2 className="text-3xl md:text-3xl font-bold text-red-700 mb-12">
+                 CLIENTES QUE CONFÍAN EN NOSOTROS
              </h2>
              <ClientsCarousel />
          </div>
@@ -103,8 +104,8 @@ const HomePage = () => {
       {/* Sección de Servicios */}
 <section className="bg-black py-20 px-4 md:px-12">
   <div className="max-w-7xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-      Nuestros Servicios
+    <h2 className="text-3xl md:text-3xl font-bold text-red-700 mb-12">
+      NUESTROS SERVICIOS
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {/* Tarjeta 1: Producción Audiovisual */}
@@ -147,6 +148,28 @@ const HomePage = () => {
     </div>
   </div>
   </section>
+<section
+  className="relative bg-cover bg-center bg-fixed"
+  style={{ backgroundImage: `url(/src/assets/proyectos3.jpg)` }}
+>
+  {/* Superposicion */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/40"></div>
+
+  {/* Contenedor del contenido */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-40">
+    <div className="max-w-3xl">
+      <h2 className="text-red-600 text-3xl font-bold uppercase tracking-widest">
+        Equipo de trabajo
+      </h2>
+      <h3 className="mt-4 text-2xl md:text-4xl font-bold text-white">
+        NUESTROS PROFESIONALES NO SE CONFORMAN CON “<span className='text-red-700'>BIEN</span>”. APUNTAN A “<span className='text-red-700'>INVOLVIDABLE</span>”.
+      </h3>
+    </div>
+  </div>
+</section>
+
+<TestimonialsWall />
+
   </div>
     
   );

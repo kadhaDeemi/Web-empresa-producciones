@@ -21,7 +21,7 @@ const SpotlightCard = ({ children, className = '' }) => {
         currentCardRef.addEventListener('mousemove', handleMouseMove);
     }
 
-    // Limpiamos el listener cuando el componente se desmonta o el mouse sale
+    // Limpiamos el listener
     return () => {
       if (currentCardRef) {
         currentCardRef.removeEventListener('mousemove', handleMouseMove);

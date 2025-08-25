@@ -14,3 +14,12 @@
 .animate-scroll {
     animation: scroll 30s linear infinite;
 }
+
+.animate-scroll2 {
+    animation: scroll 60s linear infinite;
+}
+
+.animate-scroll2:hover {
+    animation-play-state: paused;
+    
+}

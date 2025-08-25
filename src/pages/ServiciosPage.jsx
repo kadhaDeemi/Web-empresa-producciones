@@ -42,9 +42,9 @@ const services = [
 const ServiciosPage = () => {
   return (
     <div className="bg-black text-white min-h-screen">
-      <header className="pt-32 pb-20 text-center">
+      <header className="pt-48 pb-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold">Nuestros Servicios</h1>
+          <h1 className="text-4xl md:text-6xl text-red-700  font-bold">Nuestros Servicios</h1>
           <p className="mt-4 text-lg text-gray-400">
             Soluciones integrales para llevar tu visión al siguiente nivel.
           </p>

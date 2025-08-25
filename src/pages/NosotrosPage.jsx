@@ -30,27 +30,25 @@ const NosotrosPage = () => {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Encabezado de la Página */}
-      <header className="pt-32 pb-20 text-center bg-black">
+      <header className="pt-48 pb-20 text-center bg-black">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold">Sobre nosotros</h1>
+          <h1 className="text-4xl md:text-6xl text-red-700 font-bold">SOBRE NOSOTROS</h1>
         </div>
       </header>
 
-     {/* --- SECCIÓN DE HISTORIA Y FILOSOFÍA (VERSIÓN ACTUALIZADA) --- */}
+     {/* HISTORIA */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           
-          {/* Columna de Imagen (Aquí está el nuevo efecto) */}
           <div className="relative group cursor-pointer">
-            {/* El Marco Rojo (que se moverá) */}
+
             <div 
               className="absolute inset-0 border-2 border-red-700 rounded-lg 
                          translate-x-4 translate-y-4 group-hover:-translate-x-0 
                          group-hover:-translate-y-0 transition-transform duration-300 ease-in-out"
               aria-hidden="true"
             ></div>
-            
-            {/* La Imagen (que también se moverá) */}
+
             <img 
               src={teamImage} 
               alt="Equipo de SDC Producciones trabajando" 
@@ -60,7 +58,7 @@ const NosotrosPage = () => {
             />
           </div>
 
-          {/* Columna de Texto (no cambia) */}
+          {/* Columna de Texto */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-8"><span className='text-red-700'>SDC</span> PRODUCCIONES</h2>
             <h4 className='text-xl font-bold mb-4'>SURGE COMO UNA RESPUESTA CREATIVA A LA NECESIDAD DE TRANSFORMAR IDEAS EN EVENTOS MEMORABLES.</h4>

@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Contenedor principal*/}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {/* --- COLUMNA IZQUIERDA: Logo y Redes Sociales --- */}
+          {/*COLUMNA IZQUIERDA */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <Link to="/" className="mb-4">
               <img src={ImgFooter} alt="Logo SDC Producciones" className="h-25" />
@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* --- COLUMNA DEL MEDIO: Contactos --- */}
+          {/*COLUMNA DEL MEDIO*/}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-bold text-red-700 mb-4">TELÉFONO</h3>
             <ul className="space-y-2">
@@ -56,7 +56,7 @@ const Footer = () => {
               </ul>
           </div>
 
-          {/* --- COLUMNA DERECHA: Ubicación y Horario --- */}
+          {/* COLUMNA DERECHA */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-bold text-red-700 mb-4">UBICACION</h3>
             <ul className="space-y-2">
@@ -71,7 +71,7 @@ const Footer = () => {
 
         </div>
 
-        {/* Barra inferior de Copyright */}
+        {/* Barra inferior */}
         <div className="mt-12 text-gray-200 pt-8 border-t border-gray-800 text-center text-sm ">
           <p>&copy; {currentYear} SDC Producciones | Todos los derechos reservados | Pagina web diseñada y desarrollada por <a className='text-red-700' href="https://github.com/kadhaDeemi">KadhaDeemi</a></p>
         </div>
