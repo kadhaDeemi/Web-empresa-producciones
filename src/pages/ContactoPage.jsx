@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 
-import headerBgImage from '../assets/Proyectos1.jpg';
-import infoImage from '../assets/Proyectos2.jpg';
+import headerBgImage from '../assets/proyectos1.jpg';
+import infoImage from '../assets/proyectos2.jpg';
 
 const ContactoPage = () => {
   // Estado para manejar los mensajes de envío (enviando, exito, error)
