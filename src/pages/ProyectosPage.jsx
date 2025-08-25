@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 
 
-import imgProyecto1 from '../assets/proyecto1.jpeg';
-import imgProyecto2 from '../assets/proyecto2.jpeg';
-import imgProyecto3 from '../assets/proyecto3.jpeg';
+import imgProyecto1 from '../assets/Proyecto1.jpeg';
+import imgProyecto2 from '../assets/Proyecto2.jpeg';
+import imgProyecto3 from '../assets/Proyecto3.jpeg';
 
 
 
