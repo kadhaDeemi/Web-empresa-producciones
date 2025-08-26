@@ -5,10 +5,11 @@ import ProjectCard from '../components/ProjectCard';
 import ClientsCarousel from '../components/ClientsCarrousel';
 import SpotlightCard from '../components/SpotlightCard';
 import TestimonialsWall from '../components/TestimonialsWall';
+import ContactForm from '../components/ContactForm';
 
-import imgProyecto1 from '../assets/proyectos1.jpg';
-import imgProyecto2 from '../assets/proyectos2.jpg';
-import imgProyecto3 from '../assets/proyectos3.jpg';
+import imgProyecto1 from '../assets/proyectos1.webp';
+import imgProyecto2 from '../assets/proyectos2.webp';
+import imgProyecto3 from '../assets/proyectos3.webp';
 
 
 const recentProjects = [
@@ -57,18 +58,18 @@ const HomePage = () => {
         <p className="text-lg md:text-xl mb-8">
           RENTA DE EQUIPOS Y SERVICIOS PARA EVENTOS
         </p>
-        <a
-          href="/proyectos"
-          className="text-red-700 border-2 rounded-full font-bold text-lg py-3 px-8 hover:text-red-800 transition-colors duration-300">
+        <Link
+          to="/contacto"
+          className="text-red-700 border-2 border-red-700 rounded-full font-bold text-lg py-3 px-8 hover:bg-red-700 hover:text-white transition-colors duration-300">
           Conversemos hoy
-        </a>
+        </Link>
       </div>
     </section>
 
     {/* Proyectos Recientes */}
       <section className="bg-black py-20 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12 text-center">
             Proyectos Recientes
           </h2>
           {/* Grilla de Proyectos */}
@@ -169,7 +170,18 @@ const HomePage = () => {
 </section>
 
 <TestimonialsWall />
-
+<section className="bg-black py-20">
+  <div className="max-w-4xl mx-auto px-4 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-white">¿Tienes un proyecto en mente?</h2>
+    <p className="mt-4 mb-8 text-lg text-gray-400">
+      Nos encantaría escucharlo. Contáctanos y hagamos que suceda.
+    </p>
+    <div className="max-w-2xl mx-auto text-left">
+      {/* Aquí llamamos a nuestro componente reutilizable */}
+      <ContactForm />
+    </div>
+  </div>
+</section>
   </div>
     
   );

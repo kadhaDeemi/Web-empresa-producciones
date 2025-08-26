@@ -1,52 +1,9 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
+import ContactForm from '../components/ContactForm';
 
-import headerBgImage from '../assets/proyectos1.jpg';
-import infoImage from '../assets/proyectos2.jpg';
+import headerBgImage from '../assets/proyectos1.webp';
+import infoImage from '../assets/proyectos2.webp';
 
 const ContactoPage = () => {
-  // Estado para manejar los mensajes de envío (enviando, exito, error)
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [stateMessage, setStateMessage] = useState(null);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  // Funcionn que se ejecuta al enviar el formulario
-  const onSubmit = (data) => {
-    setIsSubmitting(true);
-
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        data, // Los datos del formulario
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        (response) => {
-          setStateMessage('¡Mensaje enviado con éxito!');
-          setIsSubmitting(false);
-          reset();
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000);
-        },
-        (error) => {
-          setStateMessage('Algo salió mal, por favor intenta de nuevo.');
-          setIsSubmitting(false);
-           // limpiar el mensaje de error después de 5 segundos
-           setTimeout(() => {
-            setStateMessage(null);
-          }, 5000);
-        }
-      );
-  };
   return (
     <div className="bg-black text-red-700 min-h-screen">
       
@@ -92,50 +49,7 @@ const ContactoPage = () => {
               <p className="mt-2 text-gray-400">Rellena el formulario y te contactaremos a la brevedad.</p>
             </div>
               {/* formulario */}
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
-                  <input type="text" id="name" name="name" className="block w-full bg-neutral-900 border border-gray-400 rounded-md p-3  focus:border-red-700"  
-                  // Registramos el campo y añadimos la validacion
-                    {...register('name', { required: 'El nombre es obligatorio' })}
-                  />
-                  {/* Mostramos el mensaje de error si existe */}
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-1">Empresa (Opcional)</label>
-                  <input type="text" id="company" name="company" {...register('company')} className="block w-full bg-neutral-900 border border-gray-400 rounded-md p-3 focus:ring-red-600 focus:border-red-600" />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                <input type="email" id="email" name="email" className="block w-full bg-neutral-900 border border-gray-400 rounded-md p-3 focus:ring-red-600 focus:border-red-600" 
-                {...register('email', {
-                    required: 'El email es obligatorio',
-                    pattern: {
-                      value: /^\S+@\S+$/i,
-                      message: 'El formato del email no es válido',
-                    },
-                  })}
-                />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
-                <textarea id="message" name="message" rows="5" className="block w-full bg-neutral-900 border border-gray-400 rounded-md p-3 focus:ring-red-600 focus:border-red-600"
-                  {...register('message', { required: 'El mensaje no puede estar vacío' })}
-                ></textarea>
-                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
-              </div>
-              <div>
-                <button type="submit" className="w-2/6 border-2 border-white text-white font-bold py-3 px-6 rounded-2xl hover:border-red-700 hover:text-red-070 transition-colors duration-300">
-                  {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
-                </button>
-              </div>
-              {/* Mostramos el mensaje de estado del envio */}
-              {stateMessage && <p className="text-center text-gray-300">{stateMessage}</p>}
-            </form>
+              <ContactForm />
           </div>
 
         </div>

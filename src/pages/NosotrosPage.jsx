@@ -1,8 +1,8 @@
 import React from 'react';
 
-import teamImage from '../assets/equipo-trabajando.jfif';
-import miembro1 from '../assets/miembro1.jpg';
-import miembro2 from '../assets/miembro2.png';
+import teamImage from '../assets/equipo-trabajando.webp';
+import miembro1 from '../assets/miembro1.webp';
+import miembro2 from '../assets/miembro2.webp';
 
 // Datos del equipo
 const teamMembers = [

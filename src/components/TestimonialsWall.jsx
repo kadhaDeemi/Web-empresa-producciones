@@ -1,6 +1,6 @@
 import React from 'react';
-import miembro1 from '../assets/miembro1.jpg';
-import miembro2 from '../assets/miembro2.png';
+import miembro1 from '../assets/miembro1.webp';
+import miembro2 from '../assets/miembro2.webp';
 const testimonials = [
   {
     image: miembro1,

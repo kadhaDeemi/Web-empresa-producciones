@@ -2,6 +2,8 @@ import React from 'react';
 import { LuAudioLines } from 'react-icons/lu';
 import { PiVideoCameraFill } from "react-icons/pi";
 import { IoIosMegaphone } from "react-icons/io";
+import { MdOutlineArrowOutward } from "react-icons/md";
+
 import { BsFillLightningChargeFill } from "react-icons/bs";
 
 const services = [

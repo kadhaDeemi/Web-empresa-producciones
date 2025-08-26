@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/sdcNavbar.png';
+import logo from '../assets/sdcNavbar.webp';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {

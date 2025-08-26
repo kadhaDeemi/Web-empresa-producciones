@@ -1,11 +1,14 @@
 import React from 'react';
 
-import cliente1 from '../assets/logos/Cliente1.png';
-import cliente2 from '../assets/logos/Cliente2.png';
-import cliente3 from '../assets/logos/Cliente3.png';
-import cliente4 from '../assets/logos/Cliente4.png';
-import cliente5 from '../assets/logos/Cliente5.png';
-import cliente6 from '../assets/logos/Cliente6.png';
+import cliente1 from '../assets/logos/Cliente1.webp';
+import cliente2 from '../assets/logos/Cliente2.webp';
+import cliente3 from '../assets/logos/Cliente3.webp';
+import cliente4 from '../assets/logos/Cliente4.webp';
+import cliente5 from '../assets/logos/Cliente5.webp';
+import cliente6 from '../assets/logos/Cliente6.webp';
+import cliente8 from '../assets/logos/Cliente8.webp';
+import cliente9 from '../assets/logos/Cliente9.webp';
+import cliente10 from '../assets/logos/Cliente10.webp';
 
 const logos = [
   { src: cliente1, alt: 'Cliente 1' },
@@ -14,6 +17,10 @@ const logos = [
   { src: cliente4, alt: 'Cliente 4' },
   { src: cliente5, alt: 'Cliente 5' },
   { src: cliente6, alt: 'Cliente 6' },
+  { src: cliente8, alt: 'Cliente 8' },
+  { src: cliente9, alt: 'Cliente 9' },
+  { src: cliente10, alt: 'Cliente 10' },
+
 ];
 
 const ClientsCarousel = () => {

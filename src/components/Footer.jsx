@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ImgFooter from '../assets/SDCFooter.png'
+import ImgFooter from '../assets/SDCFooter.webp'
 import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
