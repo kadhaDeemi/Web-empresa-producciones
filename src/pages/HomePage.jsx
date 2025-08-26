@@ -18,7 +18,7 @@ const recentProjects = [
     image: imgProyecto1,
     title: 'Cliente Corporativo X',
     category: 'Video Corporativo',
-  },
+  },jp
   {
     id: 2,
     image: imgProyecto2,
@@ -151,7 +151,7 @@ const HomePage = () => {
   </section>
 <section
   className="relative bg-cover bg-center bg-fixed"
-  style={{ backgroundImage: `url(/src/assets/proyectos3.jpg)` }}
+  style={{ backgroundImage: `url(/src/assets/proyectos3.webp)` }}
 >
   {/* Superposicion */}
   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/40"></div>
