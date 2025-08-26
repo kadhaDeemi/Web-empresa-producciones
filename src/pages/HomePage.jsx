@@ -5,7 +5,7 @@ import ProjectCard from '../components/ProjectCard';
 import ClientsCarousel from '../components/ClientsCarrousel';
 import SpotlightCard from '../components/SpotlightCard';
 import TestimonialsWall from '../components/TestimonialsWall';
-import ContactForm from '../components/ContactForm';
+import FinalCTA from '../components/FinalCTA';
 
 import imgProyecto1 from '../assets/proyectos1.webp';
 import imgProyecto2 from '../assets/proyectos2.webp';
@@ -151,7 +151,7 @@ const HomePage = () => {
   </section>
 <section
   className="relative bg-cover bg-center bg-fixed"
-  style={{ backgroundImage: `url(/src/assets/proyectos3.webp)` }}
+  style={{ backgroundImage: `url(${imgProyecto3})` }}
 >
   {/* Superposicion */}
   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/40"></div>
@@ -170,21 +170,10 @@ const HomePage = () => {
 </section>
 
 <TestimonialsWall />
-<section className="bg-black py-20">
-  <div className="max-w-4xl mx-auto px-4 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-white">¿Tienes un proyecto en mente?</h2>
-    <p className="mt-4 mb-8 text-lg text-gray-400">
-      Nos encantaría escucharlo. Contáctanos y hagamos que suceda.
-    </p>
-    <div className="max-w-2xl mx-auto text-left">
-      {/* Aquí llamamos a nuestro componente reutilizable */}
-      <ContactForm />
-    </div>
-  </div>
-</section>
+<FinalCTA/>
   </div>
     
   );
 };
 
-export default HomePage;
+export default HomePage;a

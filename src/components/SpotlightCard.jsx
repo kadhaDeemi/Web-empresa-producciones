@@ -17,11 +17,10 @@ const SpotlightCard = ({ children, className = '' }) => {
 
     const currentCardRef = cardRef.current;
     if (currentCardRef) {
-        // Añadimos el listener cuando el mouse entra en la tarjeta
         currentCardRef.addEventListener('mousemove', handleMouseMove);
     }
 
-    // Limpiamos el listener
+    // Limpia el listener
     return () => {
       if (currentCardRef) {
         currentCardRef.removeEventListener('mousemove', handleMouseMove);
