@@ -18,7 +18,7 @@ const recentProjects = [
     image: imgProyecto1,
     title: 'Cliente Corporativo X',
     category: 'Video Corporativo',
-  },jp
+  },
   {
     id: 2,
     image: imgProyecto2,
