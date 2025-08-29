@@ -40,8 +40,8 @@ const ProyectosPage = () => {
       {/* Encabezado de la Página */}
       <header className="pt-32 pb-20 text-center bg-black">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold">Nuestro Trabajo</h1>
-          <p className="mt-4 text-lg text-gray-400">
+          <h1 className="text-4xl md:text-5xl font-bold text-red-700">NUESTRO TRABAJO</h1>
+          <p className="mt-4 text-lg text-gray-200">
             Explora la diversidad y calidad de los proyectos que hemos traído a la vida.
           </p>
         </div>
@@ -57,7 +57,7 @@ const ProyectosPage = () => {
                 key={category}
                 onClick={() => setFilter(category)}
                 className={`px-6 py-2 rounded-full font-semibold transition-colors duration-300
-                  ${filter === category ? 'bg-white text-black' : 'bg-gray-800 text-white hover:bg-gray-700'}`
+                  ${filter === category ? 'bg-red-800 text-white border-2 border-red-800' : 'border-2 border-white text-white hover:bg-red-800 hover:border-red-800'}`
                 }
               >
                 {category}

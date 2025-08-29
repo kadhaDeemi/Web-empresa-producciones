@@ -16,19 +16,19 @@ const recentProjects = [
   {
     id: 1,
     image: imgProyecto1,
-    title: 'Cliente Corporativo X',
+    title: 'CLIENTE CORPORATIVO X',
     category: 'Video Corporativo',
   },
   {
     id: 2,
     image: imgProyecto2,
-    title: 'Lanzamiento de Producto Y',
+    title: 'LANZAMIENTO DE PRODUCTO Y',
     category: 'Producción de Evento',
   },
   {
     id: 3,
     image: imgProyecto3,
-    title: 'Artista Musical Z',
+    title: 'ARTISTA MUSICAL Z',
     category: 'Video Musical',
   },
 ];
@@ -60,8 +60,8 @@ const HomePage = () => {
         </p>
         <Link
           to="/contacto"
-          className="text-red-700 border-2 border-red-700 rounded-full font-bold text-lg py-3 px-8 hover:bg-red-700 hover:text-white transition-colors duration-300">
-          Conversemos hoy
+          className="text-red-700 border-2 border-red-700 rounded-full font-bold text-base py-3 px-8 hover:bg-red-700 hover:text-white transition-colors duration-300">
+          CONVERSEMOS HOY
         </Link>
       </div>
     </section>
@@ -70,7 +70,7 @@ const HomePage = () => {
       <section className="bg-black py-20 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12 text-center">
-            Proyectos Recientes
+            PROYECTOS RECIENTES
           </h2>
           {/* Grilla de Proyectos */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -84,8 +84,8 @@ const HomePage = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-             <a href="/proyectos" className="text-white font-semibold border border-white py-3 px-8 rounded hover:bg-white hover:text-black transition-colors duration-300">
-                 Ver Todos los Proyectos
+             <a href="/proyectos" className="text-white font-semibold text-base border border-white py-3 px-8 rounded hover:bg-white hover:text-black transition-colors duration-300">
+                 VER TODOS LOS EVENTOS
              </a>
           </div>
         </div>

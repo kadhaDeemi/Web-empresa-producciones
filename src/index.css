@@ -23,3 +23,19 @@
     animation-play-state: paused;
     
 }
+
+
+/* src/index.css */
+
+.scroll-container {
+    scroll-snap-type: y mandatory;
+    /* Habilita el snap vertical y lo hace obligatorio */
+    overflow-y: scroll;
+    height: 100vh;
+    /* El contenedor debe ocupar toda la altura de la pantalla */
+}
+
+.scroll-section {
+    scroll-snap-align: start;
+    /* Cada sección se alineará con el inicio del contenedor */
+}

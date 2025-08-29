@@ -16,7 +16,7 @@ const ContactoPage = () => {
         <div className="absolute inset-0 bg-black/70"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">CONTACTO</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">CONTACTO</h1>
         </div>
       </header>
 

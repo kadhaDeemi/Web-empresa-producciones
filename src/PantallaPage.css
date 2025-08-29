@@ -1,0 +1,189 @@
+:root {
+    --transition-duration: 1.2s;
+    --transition-timing: ease;
+}
+
+.pantallas-swiper .swiper-wrapper {
+    transition-timing-function: var(--transition-timing);
+}
+
+.pantallas-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+}
+
+.pantallas-swiper .slide-img {
+    width: 500px;
+    aspect-ratio: 1;
+    filter: blur(20px);
+    transition: all var(--transition-duration) var(--transition-timing);
+    scale: 0.5;
+    opacity: 1;
+    transform: translateX(70%);
+}
+
+.pantallas-swiper .slide-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pantallas-swiper .slide-img-blur {
+    opacity: 0;
+    position: absolute;
+}
+
+.pantallas-swiper .swiper-slide-active .slide-img {
+    scale: 2;
+    transform: translateX(-80%);
+    opacity: 0;
+}
+
+.pantallas-swiper .swiper-slide-next .slide-img {
+    filter: blur(0px);
+    scale: 1.6;
+    transform: translateX(30%);
+    opacity: 1;
+}
+
+.pantallas-swiper .swiper-slide-next .slide-img-blur {
+    opacity: 0.5;
+    filter: blur(50px);
+    z-index: -1;
+    transform: translate(100%);
+}
+
+.pantallas-swiper .swiper-slide-next .slide-img-blur img {
+    scale: 2;
+}
+
+.pantallas-swiper .swiper-slide-next+.swiper-slide .slide-img {
+    filter: blur(10px);
+    scale: 0.9;
+    opacity: 1;
+}
+
+.pantallas-swiper .swiper-slide-next {
+    z-index: 10;
+    transform: translateX(50%)
+}
+
+
+.pantallas-swiper .slide-content {
+    position: absolute;
+    opacity: 0;
+    filter: blur(20px);
+    transition: all var(--transition-duration) var(--transition-timing);
+    width: 25vw;
+    color: white;
+}
+
+.pantallas-swiper .swiper-slide-next .slide-content {
+    transform: translateX(-100%);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.slide-content h2 {
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.slide-content p {
+    line-height: 1.75;
+}
+
+.slide-content .explore-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    transition: all 0.3s;
+}
+
+.slide-content .explore-btn:hover {
+    background: #9f0712;
+    border-color: #9f0712;
+}
+
+.slide-content .explore-btn svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+/* FLECHAS DE NAVEGACIÓN */
+
+.pantallas-swiper .swiper-button-next,
+.pantallas-swiper .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pantallas-swiper .swiper-button-next::after,
+.pantallas-swiper .swiper-button-prev::after {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.pantallas-swiper .swiper-button-next:hover,
+.pantallas-swiper .swiper-button-prev:hover {
+    background-color: #9f0712;
+}
+
+.pantallas-swiper .swiper-button-prev {
+    left: 40px;
+}
+
+.pantallas-swiper .swiper-button-next {
+    right: 40px;
+}
+
+
+/* PAGINACIÓN */
+.pantallas-swiper .swiper-pagination {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.pantallas-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, width 0.3s ease;
+}
+
+.pantallas-swiper .swiper-pagination-bullet-active {
+    background-color: #9f0712;
+    width: 25px;
+    border-radius: 5px;
+}

@@ -32,7 +32,7 @@ const NosotrosPage = () => {
       {/* Encabezado de la Página */}
       <header className="pt-48 pb-20 text-center bg-black">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl text-red-700 font-bold">SOBRE NOSOTROS</h1>
+          <h1 className="text-4xl md:text-5xl text-red-700 font-bold">SOBRE NOSOTROS</h1>
         </div>
       </header>
 
@@ -93,7 +93,7 @@ const NosotrosPage = () => {
         </p>
         <a 
             href="/contacto" 
-            className="inline-block bg-red-700 text-white font-bold py-4 px-12 rounded-lg hover:bg-red-800 transition-colors duration-300 text-lg"
+            className="inline-block border-2 rounded-2xl border-white text-red-800 font-bold py-4 px-12 hover:bg-red-800 text-white hover:border-red-800 transition-colors duration-300 text-lg"
         >
             Contáctanos
         </a>
