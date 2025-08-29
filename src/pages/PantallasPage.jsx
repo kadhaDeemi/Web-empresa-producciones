@@ -1,17 +1,26 @@
-import React from 'react';
+// src/pages/PantallasPage.jsx
+import React, { useState } from 'react'; // <-- 1. CORRECCIÓN: Se añade useState
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import FinalCTA from '../components/FinalCTA';
 
-// IMPORTACIONES DE SWIPE
+// IMPORTACIONES DE SWIPER
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+// IMPORTACIONES DEL LIGHTBOX
+import Lightbox from "yet-another-react-lightbox";
+import Video from "yet-another-react-lightbox/plugins/video";
+import "yet-another-react-lightbox/styles.css";
+
 // CSS PERSONALIZADO
-import '../PantallaPage.css';
+import '../PantallaPage.css'; // <-- 2. CORRECCIÓN: Ruta con ./
 
 // img
+import imgIntro from '../assets/pantallas/Pantalla-intro.webp';
 import imgIndoor from '../assets/pantallas/pantalla-indoor.webp';
 import imgOutdoor from '../assets/pantallas/pantallas-outdoor.webp';
 import imgCustom from '../assets/pantallas/pantallas-medidas.webp'; 
@@ -37,20 +46,66 @@ const screenTypes = [
   }
 ];
 
+// 3. CORRECCIÓN: Se elimina la definición duplicada de PantallasPage
 const PantallasPage = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="bg-black pt-24"> 
+    <div className="bg-black"> {/* Quitamos pt-24 para empezar desde arriba */}
+      
+      {/* Sección de Introducción */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div 
+              onClick={() => setOpen(true)}
+              className="block relative group rounded-2xl overflow-hidden cursor-pointer"
+            >
+              <img src={imgIntro} alt="Evento con pantallas LED" className="w-full h-auto transform transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-red-700/80 rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path></svg>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="text-white text-center md:text-left"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-xl font-semibold text-red-600 uppercase tracking-wider">
+              Arriendo de Pantallas LED
+            </h2>
+            <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tighter">
+              El tamaño lo eliges tú. La calidad siempre es Full HD.
+            </h1>
+          </motion.div>
+        </div>
+      </section>
+ 
+      {/* Slider */}
       <div className="w-full h-[85vh] relative group">
         <Swiper
           className="pantallas-swiper h-full w-full"
           modules={[Navigation, Pagination]}
           loop={true}
           navigation={{
-  nextEl: ".swiper-button-next",
-  prevEl: ".swiper-button-prev"
-}}
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          }}
           slidesPerView={4}
-          pagination={{ clickable: true, }} 
+          pagination={{ clickable: true }} 
           speed={1500}
           spaceBetween={0}
         >
@@ -58,13 +113,14 @@ const PantallasPage = () => {
             <SwiperSlide key={index}>
               <div className="slide-content">
                 <div className="info">
-                  <h2 className='text-red-800 text-5xl text-semibold'>{screen.title}</h2>
+                  {/* 4. CORRECCIÓN: text-semibold a font-semibold */}
+                  <h2 className='text-red-800 text-5xl font-semibold'>{screen.title}</h2>
                   <p className='text-white text-lg'>{screen.description}</p>
                 </div>
                 <Link to={screen.link}>
                   <button className="explore-btn">
                     <span>Cotizar Servicio</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w.org/2000/svg">
                       <path d="M3.33334 12.6667L12.6667 3.33333M12.6667 3.33333H4.66667M12.6667 3.33333V11.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </button>
@@ -82,8 +138,27 @@ const PantallasPage = () => {
           <div className="swiper-button-next transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
         </Swiper>
       </div>
+      
+      {/* El componente Lightbox para el video */}
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        plugins={[Video]}
+        carousel={{ finite: true }}
+        slides={[
+          {
+            type: 'video',
+            sources: [
+              { src: '/video-pantalla.mp4', type: 'video/mp4' }
+            ],
+            autoPlay: true,
+          },
+        ]}
+      />
+      
+      <FinalCTA />
     </div>
   );
 };
 
-export default PantallasPage;   
+export default PantallasPage;
