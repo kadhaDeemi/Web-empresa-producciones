@@ -7,47 +7,47 @@ import { motion } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import '../PantallaPage.css'; 
+import '../PantallaPage.css';
 
 import FinalCTA from '../components/FinalCTA';
 
 
-import imgIntro from '../assets/iluminacion/iluminacion-intro.webp'; 
-import imgMoviles from '../assets/iluminacion/luces-roboticas.webp'; 
-import imgArquitectonica from '../assets/iluminacion/iluminacion-arquitectonica.webp'; 
-import imgEfectos from '../assets/iluminacion/efectos-especiales.webp';
+import imgIntro from '../assets/otros/otros-catering.webp'; 
+import imgMobiliario from '../assets/otros/Mobilario-evento.webp'; 
+import imgJuegos from '../assets/otros/maquinas-arcade.webp';
+import imgAdicionales from '../assets/otros/pista-baileLED.webp';
 
-// DATOS 
-const lightingTypes = [
+//DATOS
+const otherServices = [
   {
-    title: 'ILUMINACIÓN ROBÓTICA',
-    description: 'Cabezas móviles Beam, Spot y Wash para crear dinamismo, texturas y color. El corazón de cualquier espectáculo en vivo o evento corporativo.',
-    image: imgMoviles,
+    title: 'MOBILIARIO Y AMBIENTACIÓN',
+    description: 'Complementa tu evento con arriendo de sillas, mesas, sofás, alfombras y todo lo necesario para crear un ambiente cómodo y elegante para tus invitados.',
+    image: imgMobiliario,
     link: '/contacto'
   },
   {
-    title: 'ILUMINACIÓN ARQUITECTÓNICA',
-    description: 'Bañamos fachadas, salones y espacios con colores y texturas, transformando lugares comunes en ambientes espectaculares y elegantes.',
-    image: imgArquitectonica,
+    title: 'ENTRETENCIÓN Y JUEGOS',
+    description: 'Añade un toque de diversión con nuestros juegos: taca-taca, mesas de ping-pong, juegos inflables para niños y adultos, y mucho más.',
+    image: imgJuegos,
     link: '/contacto'
   },
   {
-    title: 'EFECTOS ESPECIALES',
-    description: 'Desde máquinas de humo y neblina hasta estroboscopios y lásers. Añadimos el factor "wow" para los momentos clave de tu evento.',
-    image: imgEfectos,
+    title: 'SERVICIOS ADICIONALES',
+    description: 'Ofrecemos soluciones 360°: Fotografía y video profesional, pistas de baile LED, servicios de catering y todo lo que necesites para una producción completa.',
+    image: imgAdicionales,
     link: '/contacto'
   }
 ];
 
-const IluminacionPage = () => {
+const OtrosPage = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}  
-      exit={{ opacity: 0, y: -20 }}    
-      transition={{ duration: 0.5 }}
-      className="bg-black pt-24">
-      
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}  
+          exit={{ opacity: 0, y: -20 }}    
+          transition={{ duration: 0.5 }}
+          className="bg-black pt-24">
+          
       {/*Seccion de Introduccion */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-24">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -76,16 +76,16 @@ const IluminacionPage = () => {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-xl font-semibold text-red-600 uppercase tracking-wider">
-                    Servicios de Iluminación
+                    Producción Integral con Precisión y Estilo
                   </h2>
                   <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tighter">
-                    Diseñamos con luz, creamos atmósferas únicas.
+                    Desde juegos inflables hasta asesoría técnica. Lo tenemos cubierto.
                   </h1>
                 </motion.div>
               </div>
             </section>
 
-      {/*Slider Interactivo de Productos*/}
+      {/*  Slider Interactivo de Productos*/}
       <div className="w-full h-[85vh] relative group">
         <Swiper
           className="pantallas-swiper h-full w-full"
@@ -100,14 +100,14 @@ const IluminacionPage = () => {
           speed={1200}
           spaceBetween={0}
         >
-          {[...lightingTypes, ...lightingTypes].map((light, index) => (
+          {[...otherServices, ...otherServices].map((service, index) => (
             <SwiperSlide key={index}>
               <div className="slide-content">
                 <div className="info">
-                  <h2 className='text-red-700 text-5xl font-bold'>{light.title}</h2>
-                  <p className='text-white text-lg'>{light.description}</p>
+                  <h2 className='text-red-700 text-5xl font-bold'>{service.title}</h2>
+                  <p className='text-white text-lg'>{service.description}</p>
                 </div>
-                <Link to={light.link}>
+                <Link to={service.link}>
                   <button className="explore-btn">
                     <span>Cotizar Servicio</span>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33334 12.6667L12.6667 3.33333M12.6667 3.33333H4.66667M12.6667 3.33333V11.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -115,10 +115,10 @@ const IluminacionPage = () => {
                 </Link>
               </div>
               <div className="slide-img">
-                <img src={light.image} alt={light.title} />
+                <img src={service.image} alt={service.title} />
               </div>
               <div className="slide-img-blur">
-                <img src={light.image} alt={light.title} />
+                <img src={service.image} alt={service.title} />
               </div>
             </SwiperSlide>
           ))}
@@ -127,11 +127,11 @@ const IluminacionPage = () => {
         </Swiper>
       </div>
 
-      {/*CTA*/}
+      {/* CTA */}
       <FinalCTA />
 
     </motion.div>
   );
 };
 
-export default IluminacionPage;
+export default OtrosPage;

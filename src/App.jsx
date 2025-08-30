@@ -11,6 +11,8 @@ import NosotrosPage from './pages/NosotrosPage';
 import ProyectosPage from './pages/ProyectosPage';
 import PantallasPage from './pages/PantallasPage';
 import IluminacionPage from './pages/IluminacionPage';
+import EscenariosPage from './pages/EscenariosPage';
+import OtrosPage from './pages/OtrosPage';
 function App() {
   const location = useLocation(); 
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/proyectos" element={<ProyectosPage/>} />
         <Route path='servicios/pantallas' element={<PantallasPage/>} />
         <Route path="/servicios/iluminacion" element={<IluminacionPage />} />
+        <Route path="/servicios/escenarios" element={<EscenariosPage />} />
+        <Route path="/servicios/otros" element={<OtrosPage />} />
       </Routes>
       </AnimatePresence>
       </main>
