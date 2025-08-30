@@ -1,25 +1,23 @@
-// src/pages/IluminacionPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
 
-// Importamos los estilos necesarios (reutilizamos el CSS de PantallasPage)
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import '../PantallaPage.css'; // Reutilizamos el mismo CSS, ¡no hace falta crear uno nuevo!
+import '../PantallaPage.css'; 
 
 import FinalCTA from '../components/FinalCTA';
 
-// --- 1. CONSIGUE Y REEMPLAZA ESTAS IMÁGENES ---
-import imgIntro from '../assets/pantallas/Pantalla-intro.webp'; // <- NUEVA IMAGEN
-import imgMoviles from '../assets/pantallas/Pantalla-intro.webp'; // <- NUEVA IMAGEN
-import imgArquitectonica from '../assets/pantallas/Pantallas-outdoor.webp'; // <- NUEVA IMAGEN
-import imgEfectos from '../assets/pantallas/Pantalla-indoor.webp'; // <- NUEVA IMAGEN
 
-// --- 2. REEMPLAZA LOS DATOS CON LOS DE ILUMINACIÓN ---
+import imgIntro from '../assets/pantallas/Pantalla-intro.webp'; 
+import imgMoviles from '../assets/pantallas/Pantalla-intro.webp'; 
+import imgArquitectonica from '../assets/pantallas/Pantallas-outdoor.webp'; 
+import imgEfectos from '../assets/pantallas/Pantalla-indoor.webp';
+
+// DATOS 
 const lightingTypes = [
   {
     title: 'ILUMINACIÓN ROBÓTICA',
@@ -44,7 +42,7 @@ const lightingTypes = [
 const IluminacionPage = () => {
   return (
     <div className="bg-black pt-24">
-      {/* Sección de Introducción */}
+      {/*Seccion de Introduccion */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-24">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 
@@ -81,7 +79,7 @@ const IluminacionPage = () => {
               </div>
             </section>
 
-      {/* --- Slider Interactivo de Productos --- */}
+      {/*Slider Interactivo de Productos*/}
       <div className="w-full h-[85vh] relative group">
         <Swiper
           className="pantallas-swiper h-full w-full"
@@ -96,7 +94,6 @@ const IluminacionPage = () => {
           speed={1200}
           spaceBetween={0}
         >
-          {/* 3. AHORA USAMOS LOS DATOS DE ILUMINACIÓN */}
           {[...lightingTypes, ...lightingTypes].map((light, index) => (
             <SwiperSlide key={index}>
               <div className="slide-content">
@@ -124,7 +121,7 @@ const IluminacionPage = () => {
         </Swiper>
       </div>
 
-      {/* --- Llamada a la Acción Final --- */}
+      {/*CTA*/}
       <FinalCTA />
 
     </div>

@@ -1,4 +1,3 @@
-// src/components/FinalCTA.jsx
 import React from 'react';
 import ContactForm from './ContactForm';
 
@@ -16,14 +15,14 @@ const FinalCTA = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Columna Izquierda (con texto centrado en móvil) */}
-          <div className="text-white text-center lg:text-left"> {/* <-- 2. Texto centrado en móvil, a la izquierda en escritorio */}
+          <div className="text-white text-center lg:text-left"> {/* Texto centrado en móvil, a la izquierda en escritorio */}
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Hagamos que tu <span className="text-red-600">próximo proyecto</span> sea inolvidable.
             </h2>
             <p className="text-gray-300 text-lg mb-8">
               Estamos listos para escuchar tu idea. Al trabajar con nosotros, obtienes:
             </p>
-            {/* Hacemos que la lista también se alinee a la izquierda en escritorio */}
+            {/*la lista se alinee a la izquierda en escritorio */}
             <ul className="space-y-4 text-gray-200 inline-block text-left"> 
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-red-600 mr-3 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -40,7 +39,7 @@ const FinalCTA = () => {
             </ul>
           </div>
 
-          {/* Columna Derecha (sin cambios) */}
+          {/* Columna Derecha */}
           <div className="bg-black/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/10">
             <div className="text-center text-white mb-8">
               <h3 className="text-2xl md:text-3xl font-bold">

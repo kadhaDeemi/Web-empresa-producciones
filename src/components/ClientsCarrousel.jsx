@@ -1,6 +1,5 @@
 import React from 'react';
 
-// ... (tus importaciones de logos no cambian)
 import cliente1 from '../assets/logos/Cliente1.webp';
 import cliente2 from '../assets/logos/Cliente2.webp';
 import cliente3 from '../assets/logos/Cliente3.webp';
@@ -36,7 +35,6 @@ const ClientsCarousel = () => {
     >
       <div className="relative z-10 flex w-max animate-scroll">
         {extendedLogos.map((logo, index) => (
-          // --- TAMAÑO Y ESPACIO RESPONSIVE ---
           <div 
             key={index} 
             className="

@@ -1,4 +1,3 @@
-// src/components/ContactForm.jsx
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
@@ -88,7 +87,6 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          // Corregí el hover:text-red-070 a hover:text-red-700
           className="w-full sm:w-auto border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-red-700 hover:border-red-700 hover:text-white transition-all duration-300 disabled:bg-gray-500 disabled:border-gray-500"
         >
           {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}

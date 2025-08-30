@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/sdcNavbar.webp';
@@ -16,13 +15,13 @@ const Navbar = () => {
           <Link to='/' className='hover:text-red-700 transition-colors'>INICIO</Link>
           <Link to="/proyectos" className="hover:text-red-700 transition-colors">PROYECTOS</Link>
 
-          {/* --- Elemento "Servicios" con Submenú --- */}
+          {/* Servicios con Submenu*/}
           <div className="relative group">
             <Link to="/servicios" className="hover:text-red-700 flex items-center">
               SERVICIOS
               <svg className="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" /></svg>
             </Link>
-            {/* --- El Menú Desplegable --- */}
+            {/*Menu Desplegable */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-black/80 backdrop-blur-sm rounded-lg shadow-lg border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300 invisible group-hover:visible pt-2">
               <ul className="py-2">
                 <li><Link to="/servicios/pantallas" className="block px-4 py-2 text-white hover:bg-red-700 transition-colors">PANTALLAS</Link></li>
@@ -43,7 +42,7 @@ const Navbar = () => {
             CONTACTO
           </Link>
         </div>
-        {/* --- Botón de Hamburguesa (solo visible en móvil) --- */}
+        {/*Boton de Hamburguesa */}
         <div className="md:hidden z-20">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
@@ -55,8 +54,8 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        {/* --- Menú Móvil Desplegable --- */}
-        {/* Usamos una transición para que aparezca suavemente */}
+        {/* Menu dsplegable*/}
+        {/*transicion */}
         <div className={`
           absolute top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-sm 
           flex flex-col items-center justify-center space-y-8 text-2xl

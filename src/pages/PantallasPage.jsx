@@ -1,5 +1,4 @@
-// src/pages/PantallasPage.jsx
-import React, { useState } from 'react'; // <-- 1. CORRECCIÓN: Se añade useState
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import FinalCTA from '../components/FinalCTA';
@@ -17,7 +16,7 @@ import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 
 // CSS PERSONALIZADO
-import '../PantallaPage.css'; // <-- 2. CORRECCIÓN: Ruta con ./
+import '../PantallaPage.css'; 
 
 // img
 import imgIntro from '../assets/pantallas/Pantalla-intro.webp';
@@ -46,19 +45,19 @@ const screenTypes = [
   }
 ];
 
-// 3. CORRECCIÓN: Se elimina la definición duplicada de PantallasPage
+
 const PantallasPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }} // Estado inicial (invisible, un poco abajo)
-      animate={{ opacity: 1, y: 0 }}   // Estado animado (visible, en su posición)
-      exit={{ opacity: 0, y: -20 }}    // Estado de salida (invisible, un poco arriba al salir)
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}  
+      exit={{ opacity: 0, y: -20 }}    
       transition={{ duration: 0.5 }}
-      className="bg-black pt-24"> {/* Quitamos pt-24 para empezar desde arriba */}
+      className="bg-black pt-24">
       
-      {/* Sección de Introducción */}
+      {/* Sección de Introduccion */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
@@ -118,7 +117,6 @@ const PantallasPage = () => {
             <SwiperSlide key={index}>
               <div className="slide-content">
                 <div className="info">
-                  {/* 4. CORRECCIÓN: text-semibold a font-semibold */}
                   <h2 className='text-red-800 text-5xl font-semibold'>{screen.title}</h2>
                   <p className='text-white text-lg'>{screen.description}</p>
                 </div>

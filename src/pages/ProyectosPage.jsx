@@ -1,4 +1,3 @@
-// src/pages/ProyectosPage.jsx
 import React, { useState, useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 

@@ -42,7 +42,7 @@ const SpotlightCard = ({ children, className = '' }) => {
         ${className}
       `}
     >
-      {/* Brillo Estático (Solo para Móvil) */}
+      {/* Brillo Estatico only celu */}
       <div 
         aria-hidden="true"
         className="md:hidden absolute inset-0 blur-2xl"
@@ -51,7 +51,7 @@ const SpotlightCard = ({ children, className = '' }) => {
         }}
       ></div>
 
-      {/* Brillo Dinámico (Solo para Escritorio) */}
+      {/* Brillo Dinamico (Solo para pcs) */}
       <div 
         aria-hidden="true"
         className="hidden md:block absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
@@ -60,7 +60,7 @@ const SpotlightCard = ({ children, className = '' }) => {
         }}
       />
       
-      {/* El contenido */}
+      {/* contenido */}
       <div className="relative z-10">
         {children}
       </div>

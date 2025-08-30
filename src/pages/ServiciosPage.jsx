@@ -1,14 +1,13 @@
-// src/pages/ServiciosPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// 1. Importa las imágenes para cada categoría de servicio
+
 import imgPantallas from '../assets/pantallas-led.webp';
 import imgIluminacion from '../assets/iluminacion-evento.webp';
 import imgEscenarios from '../assets/estructura-evento.webp';
 import imgOtros from '../assets/otros-evento.webp';
 
-// 2. Define las categorías que se mostrarán como tarjetas grandes
+//categorias
 const serviceCategories = [
   {
     title: 'Pantallas LED',
@@ -48,7 +47,6 @@ const ServiciosPage = () => {
         </div>
       </header>
 
-      {/* 3. El nuevo "Portal de Servicios" con tarjetas visuales */}
       <main className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -61,7 +59,7 @@ const ServiciosPage = () => {
                     alt={`Imagen de ${category.title}`}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                   />
-                  {/* Superposición de Gradiente */}
+                  {/* Superposicion de Gradiente */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                   {/* Contenido de Texto */}
                   <div className="relative h-full flex flex-col justify-end p-8">
