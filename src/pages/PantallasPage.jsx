@@ -51,7 +51,12 @@ const PantallasPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-black"> {/* Quitamos pt-24 para empezar desde arriba */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} // Estado inicial (invisible, un poco abajo)
+      animate={{ opacity: 1, y: 0 }}   // Estado animado (visible, en su posición)
+      exit={{ opacity: 0, y: -20 }}    // Estado de salida (invisible, un poco arriba al salir)
+      transition={{ duration: 0.5 }}
+      className="bg-black pt-24"> {/* Quitamos pt-24 para empezar desde arriba */}
       
       {/* Sección de Introducción */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-24">
@@ -157,7 +162,7 @@ const PantallasPage = () => {
       />
       
       <FinalCTA />
-    </div>
+    </motion.div>
   );
 };
 

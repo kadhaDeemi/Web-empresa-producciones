@@ -5,22 +5,19 @@ const SpotlightCard = ({ children, className = '' }) => {
   const [mousePosition, setMousePosition] = useState({ x: '-100%', y: '-100%' });
 
   useEffect(() => {
+    // Obtiene las coordenadas del mouse en la tarjeta
     const handleMouseMove = (event) => {
       if (cardRef.current) {
-        // Obtiene las coordenadas del mouse en la tarjeta
         const rect = cardRef.current.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
         setMousePosition({ x: `${x}px`, y: `${y}px` });
       }
     };
-
     const currentCardRef = cardRef.current;
     if (currentCardRef) {
-        currentCardRef.addEventListener('mousemove', handleMouseMove);
+      currentCardRef.addEventListener('mousemove', handleMouseMove);
     }
-
-    // Limpia el listener
     return () => {
       if (currentCardRef) {
         currentCardRef.removeEventListener('mousemove', handleMouseMove);
@@ -28,7 +25,6 @@ const SpotlightCard = ({ children, className = '' }) => {
     };
   }, []);
   
-  // Resetea la posición cuando el mouse sale de la tarjeta
   const handleMouseLeave = () => {
     setMousePosition({ x: '-100%', y: '-100%' });
   };
@@ -37,18 +33,34 @@ const SpotlightCard = ({ children, className = '' }) => {
     <div
       ref={cardRef}
       onMouseLeave={handleMouseLeave}
-      // --mouse-x y --mouse-y son variables que see actualiza con React
       style={{ '--mouse-x': mousePosition.x, '--mouse-y': mousePosition.y }}
-      className={`relative p-8 rounded-lg bg-black border-2 border-gray-700 hover:border-red-700 transition-colors duration-300 ease-in-out overflow-hidden group hover:shadow-lg hover:shadow-red-500/20  ${className}`}>
-      {/* foco d luz */}
+      className={`
+        relative p-6 md:p-8 rounded-lg bg-black border-2 
+        border-red-700 md:border-gray-700 md:hover:border-red-700 
+        md:hover:shadow-lg md:hover:shadow-red-500/20 
+        overflow-hidden group
+        ${className}
+      `}
+    >
+      {/* Brillo Estático (Solo para Móvil) */}
       <div 
-        className="absolute  inset-0 bg-radial-gradient from-red-600/30 to-transparent transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+        aria-hidden="true"
+        className="md:hidden absolute inset-0 blur-2xl"
+        style={{
+          background: 'radial-gradient(circle, rgba(220, 38, 38, 0.15), transparent)'
+        }}
+      ></div>
+
+      {/* Brillo Dinámico (Solo para Escritorio) */}
+      <div 
+        aria-hidden="true"
+        className="hidden md:block absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
         style={{
           background: `radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), rgba(240, 34, 34, 0.2), transparent)`
         }}
       />
       
-      {/* se rendiriza acaa */}
+      {/* El contenido */}
       <div className="relative z-10">
         {children}
       </div>

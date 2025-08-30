@@ -187,3 +187,8 @@
     width: 25px;
     border-radius: 5px;
 }
+
+.yarl__container {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    /* Negro muy oscuro, casi opaco */
+}

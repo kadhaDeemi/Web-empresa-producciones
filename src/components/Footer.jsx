@@ -16,7 +16,7 @@ const Footer = () => {
           {/*COLUMNA IZQUIERDA */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <Link to="/" className="mb-4">
-              <img src={ImgFooter} alt="Logo SDC Producciones" className="h-25" />
+              <img src={ImgFooter} alt="Logo SDC Producciones" className="h-24" />
             </Link>
             <p className="max-w-xs mb-4 text-sm">
               Transformamos ideas en producciones memorables.
@@ -42,16 +42,16 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-red-700 mb-4">TELÉFONO</h3>
             <ul className="space-y-2">
               <li>
-                <a>+56 9 1234 5678</a>
+                <a href="tel:+56912345678" className="hover:text-red-500 transition-colors">+56 9 1234 5678</a>
               </li>
               <li>
-                <a>+56 9 8765 4321</a>
+                <a href="tel:+56987654321" className="hover:text-red-500 transition-colors">+56 9 8765 4321</a>
               </li>
               </ul>
               <h3 className="text-lg font-bold text-red-700 mt-4 mb-4">CORREO</h3>
               <ul className="space-y-2">
               <li>
-                <a href="mailto:contacto@sdcproducciones.com">contacto@sdcproducciones.com</a>
+                <a href="mailto:contacto@sdcproducciones.com" className="hover:text-red-500 transition-colors">contacto@sdcproducciones.com</a>
               </li>
               </ul>
           </div>

@@ -5,7 +5,7 @@ const ProjectCard = ({ image, title, category }) => {
     // El 'group' nos permite aplicar efectos hover desde el contenedor padre a los hijos
     <div className="group cursor-pointer">
       {/* Contenedor de la img */}
-      <div className="overflow-hidden rounded-lg">
+      <div className="overflow-hidden rounded-lg  h-64 sm:h-80">
         <img
           src={image}
           alt={`Imagen del proyecto ${title}`}
@@ -15,8 +15,8 @@ const ProjectCard = ({ image, title, category }) => {
 
       {/* Info del Proyecto */}
       <div className="mt-4">
-        <h3 className="text-xl font-bold text-white">{title}</h3>
-        <p className="text-md text-gray-400">{category}</p>
+        <h3 className="text-lg sm:text-xl font-bold text-white">{title}</h3>
+        <p className="text-sm sm:text-base text-gray-400">{category}</p>
       </div>
     </div>
   );

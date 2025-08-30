@@ -29,14 +29,14 @@ const TestimonialsWall = () => {
   return (
     <section className="bg-black py-20">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-3xl font-bold text-red-700 mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-red-700 mb-12 uppercase tracking-wider">
          TESTIMONIOS DE CONFIANZA
         </h2>
         
         <div className="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)]">
           <div className="flex w-max animate-scroll2">
             {extendedTestimonials.map((testimonial, index) => (
-              <div key={index} className="flex-shrink-0 w-80 md:w-96 p-8 mx-4 bg-black border-2 border-red-700 rounded-xl shadow-lg">
+              <div key={index} className="flex-shrink-0  w-72 sm:w-80 sm:p-8 sm:mx-4 md:w-96 p-6 mx-3 bg-black border-2 border-red-700 rounded-xl shadow-lg">
                 <div className="flex items-center mb-4">
                   <img className="w-12 h-12 rounded-full object-cover mr-4" src={testimonial.image} alt={testimonial.name} />
                   <div>
@@ -45,7 +45,7 @@ const TestimonialsWall = () => {
                   </div>
                 </div>
                 <blockquote className="text-gray-300 text-left">
-                  <p className="italic">"{testimonial.quote}"</p>
+                  <p className="italic text-sm sm:text-base">"{testimonial.quote}"</p>
                 </blockquote>
               </div>
             ))}

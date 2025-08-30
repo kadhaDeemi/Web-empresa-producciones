@@ -1,0 +1,134 @@
+// src/pages/IluminacionPage.jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import { motion } from 'framer-motion';
+
+// Importamos los estilos necesarios (reutilizamos el CSS de PantallasPage)
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import '../PantallaPage.css'; // Reutilizamos el mismo CSS, ¡no hace falta crear uno nuevo!
+
+import FinalCTA from '../components/FinalCTA';
+
+// --- 1. CONSIGUE Y REEMPLAZA ESTAS IMÁGENES ---
+import imgIntro from '../assets/pantallas/Pantalla-intro.webp'; // <- NUEVA IMAGEN
+import imgMoviles from '../assets/pantallas/Pantalla-intro.webp'; // <- NUEVA IMAGEN
+import imgArquitectonica from '../assets/pantallas/Pantallas-outdoor.webp'; // <- NUEVA IMAGEN
+import imgEfectos from '../assets/pantallas/Pantalla-indoor.webp'; // <- NUEVA IMAGEN
+
+// --- 2. REEMPLAZA LOS DATOS CON LOS DE ILUMINACIÓN ---
+const lightingTypes = [
+  {
+    title: 'ILUMINACIÓN ROBÓTICA',
+    description: 'Cabezas móviles Beam, Spot y Wash para crear dinamismo, texturas y color. El corazón de cualquier espectáculo en vivo o evento corporativo.',
+    image: imgMoviles,
+    link: '/contacto'
+  },
+  {
+    title: 'ILUMINACIÓN ARQUITECTÓNICA',
+    description: 'Bañamos fachadas, salones y espacios con colores y texturas, transformando lugares comunes en ambientes espectaculares y elegantes.',
+    image: imgArquitectonica,
+    link: '/contacto'
+  },
+  {
+    title: 'EFECTOS ESPECIALES',
+    description: 'Desde máquinas de humo y neblina hasta estroboscopios y lásers. Añadimos el factor "wow" para los momentos clave de tu evento.',
+    image: imgEfectos,
+    link: '/contacto'
+  }
+];
+
+const IluminacionPage = () => {
+  return (
+    <div className="bg-black pt-24">
+      {/* Sección de Introducción */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-24">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <div 
+                    className="block relative group rounded-2xl overflow-hidden cursor-pointer"
+                  >
+                    <img src={imgIntro} alt="Evento con pantallas LED" className="w-full h-auto transform transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                    </div>
+                  </div>
+                </motion.div>
+      
+                <motion.div
+                  className="text-white text-center md:text-left"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-xl font-semibold text-red-600 uppercase tracking-wider">
+                    Arriendo de Pantallas LED
+                  </h2>
+                  <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tighter">
+                    El tamaño lo eliges tú. La calidad siempre es Full HD.
+                  </h1>
+                </motion.div>
+              </div>
+            </section>
+
+      {/* --- Slider Interactivo de Productos --- */}
+      <div className="w-full h-[85vh] relative group">
+        <Swiper
+          className="pantallas-swiper h-full w-full"
+          modules={[Navigation, Pagination]}
+          loop={true}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          }}
+          slidesPerView={4}
+          pagination={{ clickable: true }}
+          speed={1200}
+          spaceBetween={0}
+        >
+          {/* 3. AHORA USAMOS LOS DATOS DE ILUMINACIÓN */}
+          {[...lightingTypes, ...lightingTypes].map((light, index) => (
+            <SwiperSlide key={index}>
+              <div className="slide-content">
+                <div className="info">
+                  <h2 className='text-red-700 text-5xl font-bold'>{light.title}</h2>
+                  <p className='text-white text-lg'>{light.description}</p>
+                </div>
+                <Link to={light.link}>
+                  <button className="explore-btn">
+                    <span>Cotizar Servicio</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33334 12.6667L12.6667 3.33333M12.6667 3.33333H4.66667M12.6667 3.33333V11.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </button>
+                </Link>
+              </div>
+              <div className="slide-img">
+                <img src={light.image} alt={light.title} />
+              </div>
+              <div className="slide-img-blur">
+                <img src={light.image} alt={light.title} />
+              </div>
+            </SwiperSlide>
+          ))}
+          <div className="swiper-button-prev transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+          <div className="swiper-button-next transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+        </Swiper>
+      </div>
+
+      {/* --- Llamada a la Acción Final --- */}
+      <FinalCTA />
+
+    </div>
+  );
+};
+
+export default IluminacionPage;

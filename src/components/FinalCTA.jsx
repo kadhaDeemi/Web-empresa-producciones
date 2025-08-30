@@ -7,7 +7,7 @@ import contactBgImage from '../assets/proyectos3.webp';
 const FinalCTA = () => {
   return (
     <section
-      className="relative bg-cover bg-center bg-fixed"
+      className="relative bg-cover bg-center lg:bg-fixed"
       style={{ backgroundImage: `url(${contactBgImage})` }}
     >
       {/* Superposición con degradado para mejorar legibilidad */}
@@ -15,15 +15,16 @@ const FinalCTA = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Columna Izquierda*/}
-          <div className="text-white">
+          {/* Columna Izquierda (con texto centrado en móvil) */}
+          <div className="text-white text-center lg:text-left"> {/* <-- 2. Texto centrado en móvil, a la izquierda en escritorio */}
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Hagamos que tu <span className="text-red-600">próximo proyecto</span> sea inolvidable.
             </h2>
             <p className="text-gray-300 text-lg mb-8">
               Estamos listos para escuchar tu idea. Al trabajar con nosotros, obtienes:
             </p>
-            <ul className="space-y-4 text-gray-200">
+            {/* Hacemos que la lista también se alinee a la izquierda en escritorio */}
+            <ul className="space-y-4 text-gray-200 inline-block text-left"> 
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-red-600 mr-3 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 <span><span className="font-semibold text-white">Asesoría Personalizada:</span> Te acompañamos en cada paso del proceso creativo y técnico.</span>
@@ -39,11 +40,8 @@ const FinalCTA = () => {
             </ul>
           </div>
 
-          {/* --- Columna Derecha (El Formulario) --- */}
-         {/* --- Columna Derecha (El Formulario) --- */}
-          <div className="bg-black/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-            
-            {/* --- TÍTULO Y SUBTÍTULO AÑADIDOS --- */}
+          {/* Columna Derecha (sin cambios) */}
+          <div className="bg-black/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/10">
             <div className="text-center text-white mb-8">
               <h3 className="text-2xl md:text-3xl font-bold">
                 Conversemos de tu Proyecto

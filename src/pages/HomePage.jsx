@@ -111,23 +111,23 @@ const HomePage = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {/* Tarjeta 1: Producción Audiovisual */}
        <SpotlightCard>
-        <h3 className="text-xl font-bold text-white mb-2">Producción Audiovisual</h3>
-        <p className="text-gray-400">Videos que cuentan tu historia con impacto y calidad cinematográfica.</p>
+        <h3 className="text-lg md:text-xl font-bold text-white mb-2">Producción Audiovisual</h3>
+        <p className="text-sm md:text-base text-gray-400">Videos que cuentan tu historia con impacto y calidad cinematográfica.</p>
       </SpotlightCard>
       {/* Tarjeta 2: Producción de Eventos */}
       <SpotlightCard>
-        <h3 className="text-xl font-bold text-white mb-2">Producción de Eventos</h3>
-        <p className="text-gray-400">Creamos y producimos eventos inolvidables que conectan con tu audiencia.</p>
+        <h3 className="text-lg md:text-xl font-bold text-white mb-2">Producción de Eventos</h3>
+        <p className="text-sm md:text-base text-gray-400">Creamos y producimos eventos inolvidables que conectan con tu audiencia.</p>
       </SpotlightCard>
       {/* Tarjeta 3: Arriendo de Equipos */}
       <SpotlightCard>
-        <h3 className="text-xl font-bold text-white mb-2">Arriendo de Equipos</h3>
-        <p className="text-gray-400">Equipamiento pro de video, audio e iluminación para tus proyectos.</p>
+        <h3 className="text-lg md:text-xl font-bold text-white mb-2">Arriendo de Equipos</h3>
+        <p className=" text-sm md:text-base text-gray-400">Equipamiento pro de video, audio e iluminación para tus proyectos.</p>
       </SpotlightCard>
       {/* Tarjeta 4: Activaciones BTL */}
       <SpotlightCard>
-        <h3 className="text-xl font-bold text-white mb-2">Activaciones BTL</h3>
-        <p className="text-gray-400">Experiencias de marca creativas que generan resultados medibles.</p>
+        <h3 className="text-lg md:text-xl font-bold text-white mb-2">Activaciones BTL</h3>
+        <p className="text-sm md:text-base text-gray-400">Experiencias de marca creativas que generan resultados medibles.</p>
       </SpotlightCard>
     </div>
 

@@ -1,13 +1,15 @@
 // src/components/Navbar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/sdcNavbar.webp';
 
 const Navbar = () => {
+  // Estado para controlar si el menú móvil está abierto o cerrado
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="font-semibold absolute top-0 left-0 w-full p-6 text-white z-50">
       <nav className="flex justify-between items-center max-w-full mx-auto">
-        <Link to="/" className="text-2xl font-bold">
+        <Link to="/" className="text-2xl font-bold z-20 ">
           <img src={logo} alt="Logo SDC Producciones" className='h-18 w-48' /> 
         </Link>
         <div className="hidden md:flex items-center space-x-10 text-base">
@@ -40,6 +42,33 @@ const Navbar = () => {
           >
             CONTACTO
           </Link>
+        </div>
+        {/* --- Botón de Hamburguesa (solo visible en móvil) --- */}
+        <div className="md:hidden z-20">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? (
+              // Icono de 'X' cuando el menú está abierto
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            ) : (
+              // Icono de hamburguesa cuando está cerrado
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            )}
+          </button>
+        </div>
+        {/* --- Menú Móvil Desplegable --- */}
+        {/* Usamos una transición para que aparezca suavemente */}
+        <div className={`
+          absolute top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-sm 
+          flex flex-col items-center justify-center space-y-8 text-2xl
+          transition-opacity duration-300 ease-in-out
+          ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
+          md:hidden
+        `}>
+          <Link to='/' onClick={() => setIsOpen(false)} className='hover:text-red-700'>INICIO</Link>
+          <Link to="/proyectos" onClick={() => setIsOpen(false)} className="hover:text-red-700">PROYECTOS</Link>
+          <Link to="/servicios" onClick={() => setIsOpen(false)} className="hover:text-red-700">SERVICIOS</Link>
+          <Link to="/nosotros" onClick={() => setIsOpen(false)} className="hover:text-red-700">NOSOTROS</Link>
+          <Link to="/contacto" onClick={() => setIsOpen(false)} className="mt-4 px-8 py-3 rounded-full border-2 border-white">CONTACTO</Link>
         </div>
       </nav>
     </header>
