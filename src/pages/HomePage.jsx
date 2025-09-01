@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 import heroVideo from '../assets/hero-video.mp4'; 
 import ProjectCard from '../components/ProjectCard';
 import ClientsCarousel from '../components/ClientsCarrousel';
@@ -35,8 +37,12 @@ const recentProjects = [
 
 const HomePage = () => {
   return (
-    <div>
-    <section className="relative h-screen flex items-center justify-center text-center text-white">
+    <motion.div
+    initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}  
+      exit={{ opacity: 0, y: -20 }}    
+      transition={{ duration: 0.5 }}>
+    <section className="relative min-h-screen flex items-center justify-center text-center text-white">
       {/* capa de fondo (osea el video) */}
       <video
         src={heroVideo}
@@ -67,7 +73,7 @@ const HomePage = () => {
     </section>
 
     {/* Proyectos Recientes */}
-      <section className="bg-black py-20 px-4 md:px-12">
+      <section className="bg-black py-16 md:py-20 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12 text-center">
             PROYECTOS RECIENTES
@@ -92,9 +98,9 @@ const HomePage = () => {
       </section>
 
       {/*section clientes*/}
-      <section className="bg-black py-20">
+      <section className="bg-black py-16 md:py-20">
          <div className="max-w-7xl mx-auto text-center">
-             <h2 className="text-3xl md:text-3xl font-bold text-red-700 mb-12">
+             <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12">
                  CLIENTES QUE CONFÍAN EN NOSOTROS
              </h2>
              <ClientsCarousel />
@@ -103,9 +109,9 @@ const HomePage = () => {
 
 
       {/* Sección de Servicios */}
-<section className="bg-black py-20 px-4 md:px-12">
+<section className="bg-black py-16 md:py-20 px-4 md:px-12">
   <div className="max-w-7xl mx-auto text-center">
-    <h2 className="text-3xl md:text-3xl font-bold text-red-700 mb-12">
+    <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12">
       NUESTROS SERVICIOS
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -136,15 +142,9 @@ const HomePage = () => {
     <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-6">
       <Link 
         to="/servicios" 
-        className="bg-white text-black font-bold py-3 px-8 rounded hover:bg-gray-200 transition-colors duration-300"
+        className="border-red-700 text-gray-200 bg-red-700 text-black font-bold py-3 px-8 rounded hover:bg-red-800 transition-colors duration-300"
       >
         Conoce Todos los Servicios
-      </Link>
-      <Link 
-        to="/arriendo" 
-        className="text-white font-semibold border border-white py-3 px-8 rounded hover:bg-white hover:text-black transition-colors duration-300"
-      >
-        Ver Catálogo de Arriendo
       </Link>
     </div>
   </div>
@@ -159,10 +159,10 @@ const HomePage = () => {
   {/* Contenedor del contenido */}
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-40">
     <div className="max-w-3xl">
-      <h2 className="text-red-600 text-3xl font-bold uppercase tracking-widest">
+      <h2 className="text-red-600 text-2xl md:text-3xl font-bold uppercase tracking-widest">
         Equipo de trabajo
       </h2>
-      <h3 className="mt-4 text-2xl md:text-4xl font-bold text-white">
+      <h3 className="mt-4 text-3xl md:text-4xl font-bold text-white">
         NUESTROS PROFESIONALES NO SE CONFORMAN CON “<span className='text-red-700'>BIEN</span>”. APUNTAN A “<span className='text-red-700'>INVOLVIDABLE</span>”.
       </h3>
     </div>
@@ -171,7 +171,7 @@ const HomePage = () => {
 
 <TestimonialsWall />
 <FinalCTA/>
-  </div>
+  </motion.div>
     
   );
 };

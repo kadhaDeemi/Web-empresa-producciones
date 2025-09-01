@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
-
+import { motion } from 'framer-motion';
 
 import imgProyecto1 from '../assets/Proyecto1.webp';
 import imgProyecto2 from '../assets/Proyecto2.webp';
@@ -35,7 +35,12 @@ const ProyectosPage = () => {
   const filterCategories = ['Todos', 'Evento', 'Video', 'BTL'];
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}  
+    exit={{ opacity: 0, y: -20 }}    
+    transition={{ duration: 0.5 }} 
+    className="bg-black text-white min-h-screen">
       {/* Encabezado de la Página */}
       <header className="pt-32 pb-20 text-center bg-black">
         <div className="max-w-4xl mx-auto px-4">
@@ -77,7 +82,7 @@ const ProyectosPage = () => {
           </div>
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,11 +1,17 @@
-import ContactForm from '../components/ContactForm';
+import { motion } from 'framer-motion';
 
+import ContactForm from '../components/ContactForm';
 import headerBgImage from '../assets/proyectos1.webp';
 import infoImage from '../assets/proyectos2.webp';
 
 const ContactoPage = () => {
   return (
-    <div className="bg-black text-red-700 min-h-screen">
+    <motion.div
+     initial={{ opacity: 0, y: 20 }}
+     animate={{ opacity: 1, y: 0 }}  
+     exit={{ opacity: 0, y: -20 }}    
+     transition={{ duration: 0.5 }}
+     className="bg-black text-red-700 min-h-screen">
       
       {/*Encabezado con Imagen de Fondo*/}
       <header 
@@ -54,7 +60,7 @@ const ContactoPage = () => {
 
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 };
 

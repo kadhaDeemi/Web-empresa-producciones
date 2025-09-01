@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ServiciosPage from './pages/ServiciosPage';
-import ArriendoPage from './pages/ArriendoPage';
 import ContactoPage from './pages/ContactoPage';
 import NosotrosPage from './pages/NosotrosPage';
 import ProyectosPage from './pages/ProyectosPage';
@@ -24,7 +23,6 @@ function App() {
           <Routes location={location} key={location.pathname}> 
         <Route path="/" element={<HomePage />} />
         <Route path="/servicios" element={<ServiciosPage />} />
-        <Route path="/arriendo" element={<ArriendoPage />} />
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/nosotros" element={<NosotrosPage/>} />
         <Route path="/proyectos" element={<ProyectosPage/>} />

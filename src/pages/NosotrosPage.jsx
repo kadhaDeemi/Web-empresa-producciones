@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import teamImage from '../assets/equipo-trabajando.webp';
 import miembro1 from '../assets/miembro1.webp';
@@ -28,7 +29,12 @@ const teamMembers = [
 
 const NosotrosPage = () => {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}  
+    exit={{ opacity: 0, y: -20 }}    
+    transition={{ duration: 0.5 }} 
+    className="bg-black text-white min-h-screen">
       {/* Encabezado de la Página */}
       <header className="pt-48 pb-20 text-center bg-black">
         <div className="max-w-4xl mx-auto px-4">
@@ -99,7 +105,7 @@ const NosotrosPage = () => {
         </a>
     </div>
 </section>
-    </div>
+    </motion.div>
   );
 };
 

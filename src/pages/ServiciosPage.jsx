@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 
 import imgPantallas from '../assets/pantallas-led.webp';
 import imgIluminacion from '../assets/iluminacion-evento.webp';
@@ -37,7 +37,12 @@ const serviceCategories = [
 
 const ServiciosPage = () => {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}  
+    exit={{ opacity: 0, y: -20 }}    
+    transition={{ duration: 0.5 }} 
+    className="bg-black text-white min-h-screen">
       <header className="pt-48 pb-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl text-red-700 font-bold">NUESTROS SERVICIOS</h1>
@@ -78,7 +83,7 @@ const ServiciosPage = () => {
           </div>
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 };
 
