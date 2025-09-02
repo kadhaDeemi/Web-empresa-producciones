@@ -12,7 +12,7 @@ import '../PantallaPage.css';
 
 import FinalCTA from '../components/FinalCTA';
 
-// --- 1. CONSIGUE Y REEMPLAZA ESTAS IMÁGENES ---
+
 import imgIntro from '../assets/estructura/estructura-intro.webp'; 
 import imgTarimas from '../assets/estructura/tarimas-modulares.webp'; 
 import imgTruss from '../assets/estructura/estructura-truss.webp'; 
@@ -71,7 +71,7 @@ const EscenariosPage = () => {
                 <h2 className="text-xl font-semibold text-red-600 uppercase tracking-wider">
                     No es solo un escenario. Es tu marca en alto
                 </h2>
-                <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tighter">
+                <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter">
                    Montaje técnico, diseño visual y ejecución impecable para eventos que marcan.
                 </h1>
             </motion.div>
@@ -79,7 +79,7 @@ const EscenariosPage = () => {
       </section>
 
       {/* Slider Interactivo de Productos */}
-      <div className="w-full h-[85vh] relative group">
+      <div className="w-full overflow-hidden h-[75vh] md:h-[85vh] relative group">
         <Swiper
           className="pantallas-swiper h-full w-full"
           modules={[Navigation, Pagination]}
@@ -88,25 +88,41 @@ const EscenariosPage = () => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
           }}
-          slidesPerView={4}
           pagination={{ clickable: true }}
           speed={1200}
-          spaceBetween={0}
+          breakpoints={{
+            // A partir de 0px (móviles)
+            0: {
+              slidesPerView: 1.1,
+              centeredSlides: true,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            }
+          }}
         >
           {[...stageTypes, ...stageTypes].map((stage, index) => (
             <SwiperSlide key={index}>
               <div className="slide-content">
-                <div className="info">
-                  <h2 className='text-red-700 text-5xl font-bold'>{stage.title}</h2>
-                  <p className='text-white text-lg'>{stage.description}</p>
-                </div>
-                <Link to={stage.link}>
-                  <button className="explore-btn">
-                    <span>Cotizar Servicio</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33334 12.6667L12.6667 3.33333M12.6667 3.33333H4.66667M12.6667 3.33333V11.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </button>
-                </Link>
-              </div>
+  <h2 className='text-red-700 text-3xl sm:text-4xl lg:text-5xl font-bold'>{stage.title}</h2>
+  <p className='text-white text-base sm:text-lg'>{stage.description}</p>
+  <Link to={stage.link}>
+    <button className="explore-btn">
+      <span>Cotizar Servicio</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.33334 12.6667L12.6667 3.33333M12.6667 3.33333H4.66667M12.6667 3.33333V11.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+    </button>
+  </Link>
+</div>
               <div className="slide-img">
                 <img src={stage.image} alt={stage.title} />
               </div>

@@ -42,18 +42,19 @@ const HomePage = () => {
       animate={{ opacity: 1, y: 0 }}  
       exit={{ opacity: 0, y: -20 }}    
       transition={{ duration: 0.5 }}>
-    <section className="relative min-h-screen flex items-center justify-center text-center text-white">
+    <section className="relative h-screen min-h-[600px] flex items-center justify-center text-center text-white">
       {/* capa de fondo (osea el video) */}
       <video
         src={heroVideo}
         autoPlay
         loop
         muted
+        playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
 
       {/* Capa de Superposición (para legibilidad del texto) */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
+      <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10" />
 
       {/* txt y button Contenido */}
       <div className="relative z-20 p-4">
@@ -73,7 +74,7 @@ const HomePage = () => {
     </section>
 
     {/* Proyectos Recientes */}
-      <section className="bg-black py-16 md:py-20 px-4 md:px-12">
+      <section className="bg-black py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12 text-center">
             PROYECTOS RECIENTES
@@ -90,7 +91,7 @@ const HomePage = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-             <a href="/proyectos" className="text-white font-semibold text-base border border-white py-3 px-8 rounded hover:bg-white hover:text-black transition-colors duration-300">
+             <a href="/proyectos" className="text-white font-semibold text-base border-2 border-white py-3 px-8 rounded hover:bg-white hover:text-black transition-colors duration-300">
                  VER TODOS LOS EVENTOS
              </a>
           </div>
@@ -98,7 +99,7 @@ const HomePage = () => {
       </section>
 
       {/*section clientes*/}
-      <section className="bg-black py-16 md:py-20">
+      <section className="bg-black py-16 md:py-20 px-4 sm:px-6 lg:px-8">
          <div className="max-w-7xl mx-auto text-center">
              <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12">
                  CLIENTES QUE CONFÍAN EN NOSOTROS
@@ -109,7 +110,7 @@ const HomePage = () => {
 
 
       {/* Sección de Servicios */}
-<section className="bg-black py-16 md:py-20 px-4 md:px-12">
+<section className="bg-black py-16 md:py-20 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-12">
       NUESTROS SERVICIOS
@@ -150,19 +151,19 @@ const HomePage = () => {
   </div>
   </section>
 <section
-  className="relative bg-cover bg-center bg-fixed"
+  className="relative bg-cover bg-center bg-scroll md:bg-fixed"
   style={{ backgroundImage: `url(${imgProyecto3})` }}
 >
   {/* Superposicion */}
   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/40"></div>
 
   {/* Contenedor del contenido */}
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-40">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-40">
     <div className="max-w-3xl">
       <h2 className="text-red-600 text-2xl md:text-3xl font-bold uppercase tracking-widest">
         Equipo de trabajo
       </h2>
-      <h3 className="mt-4 text-3xl md:text-4xl font-bold text-white">
+      <h3 className="mt-4 text-3xl sm:text-4xl font-bold text-white">
         NUESTROS PROFESIONALES NO SE CONFORMAN CON “<span className='text-red-700'>BIEN</span>”. APUNTAN A “<span className='text-red-700'>INVOLVIDABLE</span>”.
       </h3>
     </div>

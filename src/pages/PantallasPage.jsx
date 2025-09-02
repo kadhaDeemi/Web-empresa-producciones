@@ -50,7 +50,7 @@ const PantallasPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.div
+     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}  
       exit={{ opacity: 0, y: -20 }}    
@@ -65,17 +65,13 @@ const PantallasPage = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div 
-              onClick={() => setOpen(true)}
-              className="block relative group rounded-2xl overflow-hidden cursor-pointer"
-            >
+            viewport={{ once: true }}>
+            <div onClick={() => setOpen(true)} className="block relative group rounded-2xl overflow-hidden cursor-pointer">
               <img src={imgIntro} alt="Evento con pantallas LED" className="w-full h-auto transform transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-red-700/80 rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
-                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path></svg>
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-red-700/80 rounded-full flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
+                  <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path></svg>
                 </div>
               </div>
             </div>
@@ -86,12 +82,11 @@ const PantallasPage = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+            viewport={{ once: true }}>
             <h2 className="text-xl font-semibold text-red-600 uppercase tracking-wider">
               Arriendo de Pantallas LED
             </h2>
-            <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tighter">
+            <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter">
               El tamaño lo eliges tú. La calidad siempre es Full HD.
             </h1>
           </motion.div>
@@ -99,7 +94,7 @@ const PantallasPage = () => {
       </section>
  
       {/* Slider */}
-      <div className="w-full h-[85vh] relative group">
+      <div className="w-full h-[75vh] md:h-[85vh] relative group overflow-hidden">
         <Swiper
           className="pantallas-swiper h-full w-full"
           modules={[Navigation, Pagination]}
@@ -108,22 +103,37 @@ const PantallasPage = () => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
           }}
-          slidesPerView={4}
           pagination={{ clickable: true }} 
           speed={1500}
-          spaceBetween={0}
-        >
+          breakpoints={{
+            0: {
+              slidesPerView: 1.1,
+              centeredSlides: true,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            }
+          }}>
           {[...screenTypes, ...screenTypes].map((screen, index) => (
             <SwiperSlide key={index}>
               <div className="slide-content">
-                <div className="info">
-                  <h2 className='text-red-800 text-5xl font-semibold'>{screen.title}</h2>
-                  <p className='text-white text-lg'>{screen.description}</p>
-                </div>
+                {/* Estructura corregida sin div "info" y con textos responsivos */}
+                <h2 className='text-red-700 text-3xl sm:text-4xl lg:text-5xl font-bold'>{screen.title}</h2>
+                <p className='text-white text-base sm:text-lg'>{screen.description}</p>
                 <Link to={screen.link}>
                   <button className="explore-btn">
                     <span>Cotizar Servicio</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w.org/2000/svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M3.33334 12.6667L12.6667 3.33333M12.6667 3.33333H4.66667M12.6667 3.33333V11.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </button>
@@ -156,9 +166,8 @@ const PantallasPage = () => {
             ],
             autoPlay: true,
           },
-        ]}
-      />
-      
+        ]}/>
+      {/*CTA*/}
       <FinalCTA />
     </motion.div>
   );

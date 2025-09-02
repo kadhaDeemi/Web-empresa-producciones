@@ -43,21 +43,21 @@ const ServiciosPage = () => {
     exit={{ opacity: 0, y: -20 }}    
     transition={{ duration: 0.5 }} 
     className="bg-black text-white min-h-screen">
-      <header className="pt-48 pb-20 text-center">
-        <div className="max-w-4xl mx-auto px-4">
+      <header className="pt-36 pb-16 md:pt-48 md:pb-20 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl text-red-700 font-bold">NUESTROS SERVICIOS</h1>
-          <p className="mt-4 text-lg text-gray-200">
+          <p className="mt-4 text-base md:text-lg text-gray-200">
             Explora nuestras áreas de especialización. Hacemos clic en una categoría para ver todos los detalles.
           </p>
         </div>
       </header>
 
-      <main className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <main className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {serviceCategories.map((category, index) => (
               <Link to={category.link} key={index} className="block group">
-                <div className="relative rounded-lg overflow-hidden h-96">
+                <div className="relative rounded-lg overflow-hidden h-80 sm:h-96">
                   {/* Imagen de Fondo */}
                   <img 
                     src={category.image} 
@@ -67,8 +67,8 @@ const ServiciosPage = () => {
                   {/* Superposicion de Gradiente */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                   {/* Contenido de Texto */}
-                  <div className="relative h-full flex flex-col justify-end p-8">
-                    <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                  <div className="relative h-full flex flex-col justify-end p-6 md:p-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">{category.title}</h3>
                     <p className="text-gray-200 text-base mt-2">{category.description}</p>
                     <div className="mt-4 text-red-500 font-semibold flex items-center
                                     opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0

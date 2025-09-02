@@ -78,7 +78,7 @@ const OtrosPage = () => {
                   <h2 className="text-xl font-semibold text-red-600 uppercase tracking-wider">
                     Producción Integral con Precisión y Estilo
                   </h2>
-                  <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tighter">
+                  <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter">
                     Desde juegos inflables hasta asesoría técnica. Lo tenemos cubierto.
                   </h1>
                 </motion.div>
@@ -86,7 +86,7 @@ const OtrosPage = () => {
             </section>
 
       {/*  Slider Interactivo de Productos*/}
-      <div className="w-full h-[85vh] relative group">
+      <div className="w-full h-[75vh] md:h-[85vh] relative group overflow-hidden">
         <Swiper
           className="pantallas-swiper h-full w-full"
           modules={[Navigation, Pagination]}
@@ -95,17 +95,34 @@ const OtrosPage = () => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
           }}
-          slidesPerView={4}
           pagination={{ clickable: true }}
           speed={1200}
-          spaceBetween={0}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.1,
+              centeredSlides: true,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            }
+          }}
         >
           {[...otherServices, ...otherServices].map((service, index) => (
             <SwiperSlide key={index}>
               <div className="slide-content">
                 <div className="info">
-                  <h2 className='text-red-700 text-5xl font-bold'>{service.title}</h2>
-                  <p className='text-white text-lg'>{service.description}</p>
+                  <h2 className='text-red-700 text-3xl sm:text-4xl lg:text-5xl font-bold'>{service.title}</h2>
+                  <p className='text-white text-base sm:text-lg'>{service.description}</p>
                 </div>
                 <Link to={service.link}>
                   <button className="explore-btn">

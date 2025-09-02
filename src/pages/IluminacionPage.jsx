@@ -78,7 +78,7 @@ const IluminacionPage = () => {
                   <h2 className="text-xl font-semibold text-red-600 uppercase tracking-wider">
                     Servicios de Iluminación
                   </h2>
-                  <h1 className="mt-2 text-4xl md:text-5xl font-extrabold tracking-tighter">
+                  <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter">
                     Diseñamos con luz, creamos atmósferas únicas.
                   </h1>
                 </motion.div>
@@ -86,7 +86,7 @@ const IluminacionPage = () => {
             </section>
 
       {/*Slider Interactivo de Productos*/}
-      <div className="w-full h-[85vh] relative group">
+      <div className="w-full h-[75vh] md:h-[85vh] relative group overflow-hidden">
         <Swiper
           className="pantallas-swiper h-full w-full"
           modules={[Navigation, Pagination]}
@@ -95,10 +95,27 @@ const IluminacionPage = () => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
           }}
-          slidesPerView={4}
           pagination={{ clickable: true }}
           speed={1200}
-          spaceBetween={0}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.1,
+              centeredSlides: true,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            }
+          }}
         >
           {[...lightingTypes, ...lightingTypes].map((light, index) => (
             <SwiperSlide key={index}>

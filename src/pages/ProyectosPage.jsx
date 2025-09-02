@@ -42,29 +42,29 @@ const ProyectosPage = () => {
     transition={{ duration: 0.5 }} 
     className="bg-black text-white min-h-screen">
       {/* Encabezado de la Página */}
-      <header className="pt-32 pb-20 text-center bg-black">
-        <div className="max-w-4xl mx-auto px-4">
+      <header className="pt-36 pb-16 md:pt-32 md:pb-20 text-center bg-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-red-700">NUESTRO TRABAJO</h1>
-          <p className="mt-4 text-lg text-gray-200">
+          <p className="mt-4 text-base md:text-lg text-gray-200">
             Explora la diversidad y calidad de los proyectos que hemos traído a la vida.
           </p>
         </div>
       </header>
 
       {/* Contenido Principal */}
-      <main className="py-20 px-4">
+      <main className="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* botones filtro */}
-          <div className="flex justify-center space-x-4 mb-12">
+          <div className="flex justify-center flex-wrap gap-3 sm:gap-4 mb-12">
             {filterCategories.map(category => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition-colors duration-300
-                  ${filter === category ? 'bg-red-800 text-white border-2 border-red-800' : 'border-2 border-white text-white hover:bg-red-800 hover:border-red-800'}`
-                }
-              >
-                {category}
+                className={`py-2 px-5 text-sm sm:text-base sm:py-2 sm:px-6 rounded-full font-semibold transition-colors duration-300
+                  ${filter === category 
+                    ? 'bg-red-800 text-white border-2 border-red-800' 
+                    : 'border-2 border-white text-white hover:bg-red-800 hover:border-red-800'}`
+                }>{category}
               </button>
             ))}
           </div>
