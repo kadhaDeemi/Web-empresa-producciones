@@ -1,8 +1,12 @@
 
-import { Routes, Route, useLocation } from 'react-router-dom'; // <-- Añadir useLocation
+import { Routes, Route, useLocation } from 'react-router-dom'; 
 import { AnimatePresence } from 'framer-motion';
+
+
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ServiciosPage from './pages/ServiciosPage';
 import ContactoPage from './pages/ContactoPage';
@@ -18,6 +22,7 @@ function App() {
     <>  
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <ScrollToTop />
       <main className="flex-grow">
       <AnimatePresence mode='wait' initial={false}> {/* mode='wait' espera a que la animación de salida termine */}
           <Routes location={location} key={location.pathname}> 
