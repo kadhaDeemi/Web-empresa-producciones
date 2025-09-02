@@ -9,9 +9,9 @@ import SpotlightCard from '../components/SpotlightCard';
 import TestimonialsWall from '../components/TestimonialsWall';
 import FinalCTA from '../components/FinalCTA';
 
-import imgProyecto1 from '../assets/proyectos1.webp';
-import imgProyecto2 from '../assets/proyectos2.webp';
-import imgProyecto3 from '../assets/proyectos3.webp';
+import imgProyecto1 from '../assets/Evento-1.webp';
+import imgProyecto2 from '../assets/Evento-2.webp';
+import imgProyecto3 from '../assets/evento-3.webp';
 
 
 const recentProjects = [

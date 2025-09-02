@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactForm from './ContactForm';
 
-import contactBgImage from '../assets/proyectos3.webp';
+import contactBgImage from '../assets/evento-4.webp';
 
 const FinalCTA = () => {
   return (
