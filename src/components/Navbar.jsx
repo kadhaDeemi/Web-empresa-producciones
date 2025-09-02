@@ -1,27 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/sdcNavbar.webp';
 
 const Navbar = () => {
-  // Estado para controlar si el menú móvil está abierto o cerrado
+  //Logica para el navbar inteligente
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  //Estado para saber si se ha hecho scroll
+  const [scrolled, setScrolled] = useState(false);
+
+  const controlNavbar = useCallback( () => {
+    // Si el scroll actual es mayor a 50px, marcamos que se ha hecho scroll
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+
+    // Si el scroll actual es mayor que el anterior, estamos bajando
+    if (window.scrollY > lastScrollY && window.scrollY > 100) { // Ocultar solo después de bajar 100px
+      setVisible(false);
+    } else { // Si no esta subiendo
+      setVisible(true);
+    }
+    // Actualiza la ultima posición del scroll
+    setLastScrollY(window.scrollY);
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', controlNavbar);
+    // Limpia el evento al desmontar el componente para evitar fugas de memoria
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [controlNavbar]);
+
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="font-semibold absolute top-0 left-0 w-full p-6 text-white z-50">
+    <header className={`
+      fixed top-0 left-0 w-full p-6 text-white z-50 font-semibold
+      transition-transform duration-300 ease-in-out
+      ${visible ? 'translate-y-0' : '-translate-y-full'}
+      ${scrolled && !isOpen ? 'bg-black/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}
+    `}>
       <nav className="flex justify-between items-center max-w-full mx-auto">
         <Link to="/" className="text-2xl font-bold z-20 ">
           <img src={logo} alt="Logo SDC Producciones" className='h-18 w-48' /> 
         </Link>
+
+        {/*Menu de Escritorio */}
         <div className="hidden md:flex items-center space-x-10 text-base">
           <Link to='/' className='hover:text-red-700 transition-colors'>INICIO</Link>
           <Link to="/proyectos" className="hover:text-red-700 transition-colors">PROYECTOS</Link>
 
-          {/* Servicios con Submenu*/}
           <div className="relative group">
             <Link to="/servicios" className="hover:text-red-700 flex items-center">
               SERVICIOS
               <svg className="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" /></svg>
             </Link>
-            {/*Menu Desplegable */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-black/80 backdrop-blur-sm rounded-lg shadow-lg border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300 invisible group-hover:visible pt-2">
               <ul className="py-2">
                 <li><Link to="/servicios/pantallas" className="block px-4 py-2 text-white hover:bg-red-700 transition-colors">PANTALLAS</Link></li>
@@ -42,20 +79,18 @@ const Navbar = () => {
             CONTACTO
           </Link>
         </div>
-        {/*Boton de Hamburguesa */}
+
+        {/*Menu Movil*/}
         <div className="md:hidden z-20">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
-              // Icono de 'X' cuando el menú está abierto
               <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
             ) : (
-              // Icono de hamburguesa cuando está cerrado
               <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
             )}
           </button>
         </div>
-        {/* Menu dsplegable*/}
-        {/*transicion */}
+
         <div className={`
           absolute top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-sm 
           flex flex-col items-center justify-center space-y-8 text-2xl
