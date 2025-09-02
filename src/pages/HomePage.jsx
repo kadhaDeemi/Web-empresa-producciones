@@ -91,9 +91,9 @@ const HomePage = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-             <a href="/proyectos" className="text-white font-semibold text-base border-2 border-white py-3 px-8 rounded hover:bg-white hover:text-black transition-colors duration-300">
+             <Link to="/proyectos" className="text-white font-semibold text-base border-2 border-white py-3 px-8 rounded hover:bg-white hover:text-black transition-colors duration-300">
                  VER TODOS LOS EVENTOS
-             </a>
+             </Link>
           </div>
         </div>
       </section>

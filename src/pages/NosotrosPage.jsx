@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 import teamImage from '../assets/equipo-trabajando.webp';
 import miembro1 from '../assets/miembro1.webp';
@@ -98,11 +99,11 @@ const NosotrosPage = () => {
         <p className="text-gray-400mt-4 mb-8 text-base sm:text-lg">
             Hablemos de cómo podemos llevar tus ideas al siguiente nivel.
         </p>
-        <a 
-            href="/contacto" 
+        <Link 
+            to="/contacto" 
             className="inline-block border-2 rounded-2xl border-white text-white font-bold py-3 px-8 md:py-4 md:px-12 hover:bg-red-700 hover:border-red-700 transition-colors duration-300 text-base md:text-lg">
             Contáctanos
-        </a>
+        </Link>
     </div>
 </section>
     </motion.div>
